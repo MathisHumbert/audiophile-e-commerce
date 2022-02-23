@@ -10,6 +10,45 @@
   --light-orange-color: #fbaf85;
 }
 
+body {
+  font-family: 'Manrope', sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: 1.29px;
+  text-transform: uppercase;
+}
+
+.body {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.overline {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+}
+
+.btn {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: 160px;
+  height: 48px;
+  background: var(--orange-color);
+  color: var(--white-color);
+  border: 0;
+}
+
 .bar-container {
   position: relative;
   width: 16px;
@@ -80,7 +119,7 @@
 .bar {
   width: 16px;
   height: 1px;
-  background: #fff;
+  background: rgb(255, 255, 255);
 }
 
 .bar2 {
