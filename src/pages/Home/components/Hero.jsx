@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import backgroundImage from '../../../assets/home/mobile/image-header.jpg';
+import images from '../../../assets';
 
 const Hero = () => {
   return (
@@ -18,7 +18,7 @@ const Hero = () => {
 };
 
 const Wrapper = styled.section`
-  background-image: url(${backgroundImage});
+  background-image: url(${images.homeHeroMobile});
   height: calc(100vh - 89px);
   width: 100%;
   background-position: center;

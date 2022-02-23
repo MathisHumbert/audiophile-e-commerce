@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import images from '../../../assets';
-import backgroundImage from '../../../assets/home/desktop/pattern-circles.svg';
 
 const Product1 = () => {
   return (
@@ -26,7 +25,7 @@ const Product1 = () => {
 const Wrapper = styled.article`
   padding: 55px 24px;
   background: var(--orange-color);
-  background-image: url(${backgroundImage});
+  background-image: url(${images.circleSvg});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
