@@ -7,7 +7,7 @@ const Product2 = () => {
     <Wrapper>
       <div className='info'>
         <h4>zx7 speaker</h4>
-        <Link to='/' className='btn transparent'>
+        <Link to='/products/zx7-speaker' className='btn transparent'>
           see products
         </Link>
       </div>

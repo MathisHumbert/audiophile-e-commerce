@@ -7,12 +7,12 @@ const Categories = () => {
   return (
     <Wrapper>
       {categoriesData.map((item) => {
-        const { id, img, title } = item;
+        const { id, img, title, url } = item;
         return (
           <article key={id}>
             <img src={img} alt='title' />
             <h6>{title}</h6>
-            <Link to={title} className='subtitle'>
+            <Link to={url} className='subtitle'>
               shop <FaChevronRight />
             </Link>
           </article>
@@ -23,7 +23,7 @@ const Categories = () => {
 };
 
 const Wrapper = styled.section`
-  padding: 106px 24px 120px 24px;
+  padding: 50px 24px 0 24px;
   display: flex;
   flex-direction: column;
   gap: 66px;

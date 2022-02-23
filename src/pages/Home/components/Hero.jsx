@@ -27,6 +27,7 @@ const Wrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 40px;
 
   div {
     text-align: center;

@@ -33,10 +33,8 @@ const Footer = () => {
           {footerIconsData.map((item) => {
             const { id, icon, url } = item;
             return (
-              <li>
-                <a href={url} key={id}>
-                  {icon}
-                </a>
+              <li key={id}>
+                <a href={url}>{icon}</a>
               </li>
             );
           })}

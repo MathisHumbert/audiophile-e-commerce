@@ -8,7 +8,7 @@ const Product3 = () => {
       <div className='top'></div>
       <div className='bottom'>
         <h4>yx1 earphones</h4>
-        <Link to='/' className='btn transparent'>
+        <Link to='/products/yx1-earphones' className='btn transparent'>
           see products
         </Link>
       </div>

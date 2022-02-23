@@ -14,7 +14,7 @@ const Product1 = () => {
           Upgrade to premium speakers that are phenomenally built to deliver
           truly remarkable sound.
         </p>
-        <Link to='/' className='btn'>
+        <Link to='/products/zx9-speaker' className='btn'>
           see products
         </Link>
       </div>

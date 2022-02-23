@@ -14,7 +14,7 @@ const Products = () => {
 };
 
 const Wrapper = styled.section`
-  padding: 0 24px;
+  padding: 120px 24px 0 24px;
   display: flex;
   flex-direction: column;
   gap: 24px;
