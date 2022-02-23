@@ -1,7 +1,7 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import mainLogo from '../assets/shared/desktop/logo.svg';
-import checkoutLogo from '../assets/shared/desktop/icon-cart.svg';
+import images from '../assets';
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -18,8 +18,10 @@ const Navbar = () => {
         <div className='bar2 bar'></div>
         <div className='bar3 bar'></div>
       </div>
-      <img src={mainLogo} alt='main-logo' />
-      <img src={checkoutLogo} alt='checkout-logo' />
+      <Link to='/'>
+        <img src={images.companyLogo} alt='company-logo' />
+      </Link>
+      <img src={images.checkoutLogo} alt='checkout-logo' />
     </Wrapper>
   );
 };
@@ -30,6 +32,5 @@ const Wrapper = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 `;
 export default Navbar;
