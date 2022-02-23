@@ -9,3 +9,143 @@
   --orange-color: #d87d4a;
   --light-orange-color: #fbaf85;
 }
+
+.bar-container {
+  position: relative;
+  width: 16px;
+  height: 14px;
+  transition: all 0.4s ease;
+
+  &:hover {
+    .bar2 {
+      width: 16px;
+    }
+  }
+}
+
+.bar {
+  position: absolute;
+}
+
+.bar1 {
+  top: 0;
+}
+
+.bar2 {
+  top: 6px;
+}
+
+.bar3 {
+  top: 12px;
+}
+
+.bar-close {
+  .bar1 {
+    animation: bar1-close 0.2s linear;
+    transform: skewY(40deg);
+    top: 6px;
+  }
+
+  .bar2 {
+    animation: bar2-close 0.2s linear;
+    opacity: 0;
+  }
+
+  .bar3 {
+    animation: bar3-close 0.2s linear;
+    transform: skewY(-40deg);
+    top: 6px;
+  }
+}
+
+.bar-line {
+  .bar1 {
+    animation: bar1-line 0.2s linear;
+    transform: skewY(0deg);
+    top: 0;
+  }
+
+  .bar2 {
+    animation: bar2-line 0.2s linear;
+    opacity: 1;
+  }
+
+  .bar3 {
+    animation: bar3-line 0.2s linear;
+    transform: skewY(0deg);
+    top: 12px;
+  }
+}
+
+.bar {
+  width: 16px;
+  height: 1px;
+  background: #fff;
+}
+
+.bar2 {
+  width: 12px;
+  transition: width 0.2s ease;
+}
+
+@keyframes bar1-close {
+  0% {
+    top: 0px;
+    transform: skewY(0);
+  }
+  100% {
+    top: 6px;
+    transform: skewY(40deg);
+  }
+}
+
+@keyframes bar2-close {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes bar3-close {
+  0% {
+    top: 12px;
+    transform: skewY(0);
+  }
+  100% {
+    top: 6px;
+    transform: skewY(-40deg);
+  }
+}
+
+@keyframes bar1-line {
+  0% {
+    top: 6px;
+    transform: skewY(40deg);
+  }
+  100% {
+    top: 0px;
+    transform: skewY(0);
+  }
+}
+
+@keyframes bar2-line {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bar3-line {
+  0% {
+    top: 6px;
+    transform: skewY(-40deg);
+  }
+  100% {
+    top: 12px;
+    transform: skewY(0);
+  }
+}
