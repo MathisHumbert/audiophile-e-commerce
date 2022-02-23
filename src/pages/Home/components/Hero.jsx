@@ -21,7 +21,6 @@ const Wrapper = styled.section`
   background-image: url(${backgroundImage});
   height: calc(100vh - 89px);
   width: 100%;
-  background-image: center;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

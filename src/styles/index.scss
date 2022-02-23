@@ -22,10 +22,34 @@ h1 {
   text-transform: uppercase;
 }
 
+h4 {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 38px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
 .body {
   font-weight: 500;
   font-size: 15px;
   line-height: 25px;
+}
+
+.subtitle {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 17px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .overline {
@@ -47,6 +71,16 @@ h1 {
   background: var(--orange-color);
   color: var(--white-color);
   border: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+
+  &.transparent {
+    background: 0;
+    border: 1px solid var(--black-color);
+    color: var(--black-color);
+  }
 }
 
 .bar-container {
