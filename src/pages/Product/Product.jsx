@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProduct } from '../../redux/features/productSlice';
 import { Box, Featured, Features, Gallery, GoBack, Info } from './components';
+import { Categories, About } from '../../components';
 
 const Product = () => {
   const dispatch = useDispatch();
@@ -28,11 +29,11 @@ const Product = () => {
       <GoBack />
       <Info {...product[0]} />
       <Features features={product[0].features} />
-      {/* IN THE BOX */}
-      {/* GALLERY */}
-      {/* FEATURED PRODUCTS */}
-      {/* CATEGORIES */}
-      {/* ABOUT */}
+      <Box box={product[0].includes} />
+      <Gallery gallery={product[0].gallery} />
+      <Featured featured={product[0].others} />
+      <Categories />
+      <About />
     </main>
   );
 };
