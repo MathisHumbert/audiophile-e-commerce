@@ -1,22 +1,33 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProduct } from '../../redux/features/productSlice';
+import { Box, Featured, Features, Gallery, GoBack, Info } from './components';
 
 const Product = () => {
+  const dispatch = useDispatch();
   const { productName } = useParams();
+  const { product, isLoading, isError } = useSelector((state) => state.product);
 
   useEffect(() => {
-    const fetchData = async (id) => {
-      let { data } = await axios('http://localhost:3000/data.json');
-      data = data.filter((item) => item.slug === id);
-    };
+    dispatch(fetchProduct(productName));
   }, []);
+
+  if (isLoading || product.length === 0) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (isError) {
+    return <h1>Something went wrong. Try again</h1>;
+  }
+
+  console.log(product);
+
   return (
     <main>
-      {/* GO BACK */}
-      {/* PRODUCT INFO */}
-      {/* CART BUTTONS */}
-      {/* FEATURES */}
+      <GoBack />
+      <Info {...product[0]} />
+      <Features features={product[0].features} />
       {/* IN THE BOX */}
       {/* GALLERY */}
       {/* FEATURED PRODUCTS */}
