@@ -12,7 +12,7 @@ const Product = () => {
 
   useEffect(() => {
     dispatch(fetchProduct(productName));
-  }, []);
+  }, [productName]);
 
   if (isLoading || product.length === 0) {
     return <h1>Loading...</h1>;
@@ -21,8 +21,6 @@ const Product = () => {
   if (isError) {
     return <h1>Something went wrong. Try again</h1>;
   }
-
-  console.log(product);
 
   return (
     <main>
