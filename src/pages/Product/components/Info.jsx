@@ -5,7 +5,15 @@ import ProductButton from '../../../components/ProductButton';
 import { formatPrice } from '../../../utils/helpers';
 import { addItemToCart, openCart } from '../../../redux/features/cartSlice';
 
-const Info = ({ description, image, name, new: isNew, price, slug }) => {
+const Info = ({
+  description,
+  image,
+  name,
+  new: isNew,
+  price,
+  slug,
+  shortName,
+}) => {
   const dispatch = useDispatch();
   const [amount, setAmount] = useState(1);
 
@@ -25,9 +33,10 @@ const Info = ({ description, image, name, new: isNew, price, slug }) => {
   const addToCart = () => {
     const item = {
       id: slug,
-      name,
+      name: shortName,
       price,
       amount,
+      img: `/assets/cart/image-${slug}.jpg`,
     };
     dispatch(addItemToCart(item));
     setAmount(1);

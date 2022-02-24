@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import images from '../assets';
+import { toggleCart } from '../redux/features/cartSlice';
 
 const Navbar = () => {
+  const dispatch = useDispatch();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
@@ -21,7 +24,9 @@ const Navbar = () => {
       <Link to='/'>
         <img src={images.companyLogo} alt='company-logo' />
       </Link>
-      <img src={images.checkoutLogo} alt='checkout-logo' />
+      <button className='checkout' onClick={() => dispatch(toggleCart())}>
+        <img src={images.checkoutLogo} alt='checkout-logo' />
+      </button>
     </Wrapper>
   );
 };
@@ -32,5 +37,10 @@ const Wrapper = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .checkout {
+    background: 0;
+    border: 0;
+  }
 `;
 export default Navbar;

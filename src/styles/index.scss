@@ -10,8 +10,18 @@
   --light-orange-color: #fbaf85;
 }
 
+#root {
+  overflow-x: hidden;
+
+  &.prevent-scroll {
+    height: 100vh;
+    overflow-y: hidden;
+  }
+}
+
 body {
   font-family: 'Manrope', sans-serif;
+  background: #fafafa;
 }
 
 h1 {
@@ -100,7 +110,7 @@ h6 {
   text-decoration: none;
   color: var(--black-color);
   opacity: 0.5;
-  padding: 16px 0 24px;
+  padding: 16px 0 24px 24px;
 }
 
 .bar-container {

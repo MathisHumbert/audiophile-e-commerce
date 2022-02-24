@@ -3,5 +3,15 @@ import Categories from './Categories';
 import HeaderProducts from './HeaderProducts';
 import Navbar from './Navbar';
 import PageProducts from './PageProducts';
+import CartAside from './CartAside';
+import Footer from './Footer';
 
-export { About, Categories, HeaderProducts, Navbar, PageProducts };
+export {
+  About,
+  Categories,
+  HeaderProducts,
+  Navbar,
+  PageProducts,
+  CartAside,
+  Footer,
+};
