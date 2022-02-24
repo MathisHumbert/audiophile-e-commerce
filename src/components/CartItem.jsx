@@ -1,8 +1,28 @@
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import ProductButton from './ProductButton';
 import { formatPrice } from '../utils/helpers';
+import {
+  deleteItem,
+  decItemAmount,
+  incItemAmount,
+} from '../redux/features/cartSlice';
 
 const CartItem = ({ id, name, price, amount, img }) => {
+  const dispatch = useDispatch();
+
+  const decAmount = () => {
+    if (amount === 1) {
+      console.log('delete');
+      dispatch(deleteItem(id));
+    } else {
+      dispatch(decItemAmount(id));
+    }
+  };
+
+  const incAmount = () => {
+    dispatch(incItemAmount(id));
+  };
   return (
     <Wrapper>
       <div className='left'>
@@ -12,7 +32,11 @@ const CartItem = ({ id, name, price, amount, img }) => {
           <p className='body item-price'>{formatPrice(price)}</p>
         </div>
       </div>
-      <ProductButton amount={amount} />
+      <ProductButton
+        amount={amount}
+        decAmount={decAmount}
+        incAmount={incAmount}
+      />
     </Wrapper>
   );
 };

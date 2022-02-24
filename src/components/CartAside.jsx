@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { formatPrice } from '../utils/helpers';
+import { formatPrice, preventScroll } from '../utils/helpers';
 import {
   toggleCart,
   toggleCartInfo,
@@ -41,9 +41,9 @@ const CartAside = () => {
           <>
             <header>
               <h6>cart ({amount})</h6>
-              <p className='body' onClick={() => dispatch(clearCart())}>
+              <btn className='body' onClick={() => dispatch(clearCart())}>
                 Remove all
-              </p>
+              </btn>
             </header>
             <div className='items-container'>
               {cart.map((item) => {
@@ -55,7 +55,11 @@ const CartAside = () => {
                 <p className='body'>total</p>
                 <h6>{formatPrice(total)}</h6>
               </div>
-              <Link to='/checkout' className='btn'>
+              <Link
+                to='/checkout'
+                className='btn'
+                onClick={() => dispatch(toggleCart())}
+              >
                 checkout
               </Link>
             </footer>
@@ -104,6 +108,7 @@ const Wrapper = styled.aside`
     .body {
       text-decoration: underline;
       opacity: 0.5;
+      cursor: pointer;
     }
   }
 
