@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProduct } from '../../redux/features/productSlice';
-import { Box, Featured, Features, Gallery, GoBack, Info } from './components';
-import { Categories, About } from '../../components';
+import { Box, Featured, Features, Gallery, Info } from './components';
+import { Categories, About, GoBack } from '../../components';
 
 const Product = () => {
   const dispatch = useDispatch();

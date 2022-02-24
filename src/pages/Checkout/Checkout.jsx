@@ -1,5 +1,13 @@
+import { GoBack } from '../../components';
+import Form from './components/Form';
+
 const Checkout = () => {
-  return <div>Checkout</div>;
+  return (
+    <main className='main-center'>
+      <GoBack />
+      <Form />
+    </main>
+  );
 };
 
 export default Checkout;

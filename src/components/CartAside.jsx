@@ -41,9 +41,9 @@ const CartAside = () => {
           <>
             <header>
               <h6>cart ({amount})</h6>
-              <btn className='body' onClick={() => dispatch(clearCart())}>
+              <button className='body' onClick={() => dispatch(clearCart())}>
                 Remove all
-              </btn>
+              </button>
             </header>
             <div className='items-container'>
               {cart.map((item) => {
@@ -109,6 +109,8 @@ const Wrapper = styled.aside`
       text-decoration: underline;
       opacity: 0.5;
       cursor: pointer;
+      border: 0;
+      background: 0;
     }
   }
 

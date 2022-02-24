@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import PageProducts from './PageProducts';
 import CartAside from './CartAside';
 import Footer from './Footer';
+import GoBack from './GoBack';
 
 export {
   About,
@@ -14,4 +15,5 @@ export {
   PageProducts,
   CartAside,
   Footer,
+  GoBack,
 };
