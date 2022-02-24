@@ -4,19 +4,21 @@ import FormControl from './FormControl';
 import FormControlPayment from './FormControlPayment';
 import images from '../../../assets';
 
+const initialState = {
+  name: '',
+  email: '',
+  phone: '',
+  address: '',
+  zip: '',
+  city: '',
+  country: '',
+  emoney: true,
+  emoneyNumber: '',
+  emoneyPin: '',
+};
+
 const Form = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    address: '',
-    zip: '',
-    city: '',
-    country: '',
-    emoney: true,
-    emoneyNumber: '',
-    emoneyPin: '',
-  });
+  const [formData, setFormData] = useState(initialState);
 
   const {
     name,
@@ -43,8 +45,12 @@ const Form = () => {
     setFormData((prevState) => ({ ...prevState, emoney: value }));
   };
 
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
-    <Wrapper>
+    <Wrapper onSubmit={onSubmit}>
       <h4>checkout</h4>
       {/* BILLING DETAILS */}
       <div className='form-container'>
@@ -165,7 +171,7 @@ const Form = () => {
             </div>
           ) : (
             <div className='cash-container'>
-              <img src={images.cashLogo} alt='' />
+              <img src={images.cashLogo} alt='cash' />
               <p className='body'>
                 The ‘Cash on Delivery’ option enables you to pay in cash when
                 our delivery courier arrives at your residence. Just make sure
