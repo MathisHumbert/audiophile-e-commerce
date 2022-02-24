@@ -1,6 +1,7 @@
 const images = {
   companyLogo: require('./shared/desktop/logo.svg').default,
   checkoutLogo: require('./shared/desktop/icon-cart.svg').default,
+  cashLogo: require('./cart/cash-icon.svg').default,
   earphonesCategory: require('./shared/desktop/image-category-thumbnail-earphones.png'),
   headphonesCategory: require('./shared/desktop/image-category-thumbnail-headphones.png'),
   speakersCategory: require('./shared/desktop/image-category-thumbnail-speakers.png'),

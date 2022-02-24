@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import FormControl from './FormControl';
 import FormControlPayment from './FormControlPayment';
+import images from '../../../assets';
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -13,9 +14,22 @@ const Form = () => {
     city: '',
     country: '',
     emoney: true,
+    emoneyNumber: '',
+    emoneyPin: '',
   });
 
-  const { name, email, phone, address, zip, city, country, emoney } = formData;
+  const {
+    name,
+    email,
+    phone,
+    address,
+    zip,
+    city,
+    country,
+    emoney,
+    emoneyNumber,
+    emoneyPin,
+  } = formData;
 
   const onChange = (e) => {
     console.log(e.target.value);
@@ -127,7 +141,40 @@ const Form = () => {
             />
           </div>
         </div>
-        <div className='form-group'>toogle</div>
+        <div className='form-group'>
+          {emoney ? (
+            <div className='inputs-container'>
+              {/* ADDRESS */}
+              <FormControl
+                name='emoneyNumber'
+                value={emoneyNumber}
+                onChange={onChange}
+                type='number'
+                title='e-Money Number'
+                placeholder='238521993'
+              />
+              {/* ZIP */}
+              <FormControl
+                name='emoneyPin'
+                value={emoneyPin}
+                onChange={onChange}
+                type='number'
+                title='e-Money PIN'
+                placeholder='6891'
+              />
+            </div>
+          ) : (
+            <div className='cash-container'>
+              <img src={images.cashLogo} alt='' />
+              <p className='body'>
+                The ‘Cash on Delivery’ option enables you to pay in cash when
+                our delivery courier arrives at your residence. Just make sure
+                your address is correct so that your order will not be
+                cancelled.
+              </p>
+            </div>
+          )}
+        </div>
       </div>
     </Wrapper>
   );
@@ -175,6 +222,19 @@ const Wrapper = styled.form`
     font-size: 14px;
     font-weight: 700;
     letter-spacing: -0.25px;
+  }
+
+  .cash-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    img {
+      width: 2rem;
+    }
+    .body {
+      opacity: 0.5;
+    }
   }
 `;
 export default Form;

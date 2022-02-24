@@ -6,6 +6,7 @@ const Checkout = () => {
     <main className='main-center'>
       <GoBack />
       <Form />
+      {/* SUMMARY */}
     </main>
   );
 };
