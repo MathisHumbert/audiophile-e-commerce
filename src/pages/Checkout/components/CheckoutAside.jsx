@@ -6,8 +6,9 @@ import { formatPrice } from '../../../utils/helpers';
 import Item from './Item';
 
 const CheckoutAside = () => {
-  const { cart, total } = useSelector((state) => state.cart);
-  const { isCheckoutOpen } = useSelector((state) => state.checkout);
+  const { isCheckoutOpen, checkoutCart, checkoutCartTotal } = useSelector(
+    (state) => state.checkout
+  );
 
   return (
     <Wrapper
@@ -25,17 +26,19 @@ const CheckoutAside = () => {
         </header>
         <div className='container'>
           <div className='items'>
-            <Item {...cart[0]} />
-            {cart.length > 0 && (
+            <Item {...checkoutCart[0]} />
+            {checkoutCart.length > 0 && (
               <>
                 <hr />
-                <p className='small'>and {cart.length - 1} other item(s)</p>
+                <p className='small'>
+                  and {checkoutCart.length - 1} other item(s)
+                </p>
               </>
             )}
           </div>
           <div className='price'>
             <p className='body'>grand total</p>
-            <h5>{formatPrice(total)}</h5>
+            <h5>{formatPrice(checkoutCartTotal)}</h5>
           </div>
         </div>
         <Link to='/' className='btn'>

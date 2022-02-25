@@ -1,19 +1,25 @@
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import { clearCart } from '../../../redux/features/cartSlice';
+import {
+  resetForm,
+  addCartToCheckout,
+} from '../../../redux/features/checkoutSlice';
 import { controlForm, formatPrice } from '../../../utils/helpers';
 import Item from './Item';
 
 const Summary = () => {
   const dispatch = useDispatch();
   const { cart, total } = useSelector((state) => state.cart);
+  const { checkout } = useSelector((state) => state.checkout);
 
   const onClick = () => {
-    const continueAndPay = controlForm();
+    const continueAndPay = controlForm(checkout.emoney);
 
     if (continueAndPay) {
-      // RESET FORM
-      // RESET CART
-      // dispatch()
+      dispatch(resetForm());
+      dispatch(addCartToCheckout({ cart, total }));
+      dispatch(clearCart());
     }
   };
 

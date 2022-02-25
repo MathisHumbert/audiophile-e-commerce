@@ -13,6 +13,8 @@ const initialState = {
     emoneyNumber: '',
     emoneyPin: '',
   },
+  checkoutCart: [],
+  checkoutCartTotal: 0,
   isCheckoutOpen: false,
 };
 
@@ -24,8 +26,15 @@ const checkoutSlice = createSlice({
       const { id, value } = action.payload;
       state.checkout[id] = value;
     },
+    resetForm: () => initialState,
+    addCartToCheckout: (state, action) => {
+      state.isCheckoutOpen = true;
+      state.checkoutCart = action.payload.cart;
+      state.checkoutCartTotal = action.payload.total;
+    },
   },
 });
 
-export const { onFormChange } = checkoutSlice.actions;
+export const { onFormChange, resetForm, addCartToCheckout } =
+  checkoutSlice.actions;
 export default checkoutSlice.reducer;

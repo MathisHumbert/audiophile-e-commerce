@@ -17,15 +17,23 @@ export const preventScroll = (open) => {
   }
 };
 
-export const controlForm = () => {
+export const controlForm = (emoney) => {
   let formIsFullAndValidate = true;
   const formControls = document.querySelectorAll('.control-form');
 
   formControls.forEach((item) => {
     const input = item.children[1];
+
     if (validator.isEmpty(input.value)) {
-      item.classList.add('error');
-      formIsFullAndValidate = false;
+      if (
+        (input.id === 'emoneyNumber' || input.id === 'emoneyPin') &&
+        !emoney
+      ) {
+        item.classList.remove('error');
+      } else {
+        item.classList.add('error');
+        formIsFullAndValidate = false;
+      }
     } else {
       item.classList.remove('error');
     }
