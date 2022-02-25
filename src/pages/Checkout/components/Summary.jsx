@@ -1,10 +1,21 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
-import { formatPrice } from '../../../utils/helpers';
+import { controlForm, formatPrice } from '../../../utils/helpers';
 import Item from './Item';
 
 const Summary = () => {
+  const dispatch = useDispatch();
   const { cart, total } = useSelector((state) => state.cart);
+
+  const onClick = () => {
+    const continueAndPay = controlForm();
+
+    if (continueAndPay) {
+      // RESET FORM
+      // RESET CART
+      // dispatch()
+    }
+  };
 
   return (
     <Wrapper>
@@ -32,7 +43,9 @@ const Summary = () => {
           <h5>{formatPrice(total + 50)}</h5>
         </div>
       </div>
-      <button className='btn'>continue & pay</button>
+      <button className='btn' onClick={onClick}>
+        continue & pay
+      </button>
     </Wrapper>
   );
 };

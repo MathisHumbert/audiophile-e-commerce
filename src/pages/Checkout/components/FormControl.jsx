@@ -2,14 +2,18 @@ import styled from 'styled-components';
 
 const FormControl = ({ name, type, value, onChange, title, placeholder }) => {
   return (
-    <Wrapper>
-      <label htmlFor={name}>{title}</label>
+    <Wrapper className='control-form'>
+      <header>
+        <label htmlFor={name}>{title}</label>
+        <p className='small'>Wrong Format</p>
+      </header>
       <input
         type={type}
         id={name}
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        className='control-input'
       />
     </Wrapper>
   );
@@ -20,11 +24,23 @@ const Wrapper = styled.div`
   flex-direction: column;
   gap: 9px;
 
-  label {
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  label,
+  .small {
     font-size: 12px;
     font-weight: 700;
     letter-spacing: -0.21px;
     line-height: 16px;
+  }
+
+  .small {
+    font-weight: 500;
+    color: #cd2c2c;
+    opacity: 0;
   }
 
   input {
@@ -35,6 +51,7 @@ const Wrapper = styled.div`
     font-size: 14px;
     letter-spacing: -0.25px;
     color: var(--black-color);
+    transition: 0.3s border ease;
 
     &::placeholder {
       font-size: 14px;
@@ -42,6 +59,24 @@ const Wrapper = styled.div`
       letter-spacing: -0.25px;
       opacity: 0.4;
       color: var(--black-color);
+    }
+
+    &:focus {
+      border: 1px solid var(--orange-color);
+    }
+  }
+
+  &.error {
+    label {
+      color: #cd2c2c;
+    }
+
+    .small {
+      opacity: 1;
+    }
+
+    input {
+      border: 1px solid #cd2c2c;
     }
   }
 `;

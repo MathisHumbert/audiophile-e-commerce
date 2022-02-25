@@ -7,8 +7,12 @@ import Item from './Item';
 
 const CheckoutAside = () => {
   const { cart, total } = useSelector((state) => state.cart);
+  const { isCheckoutOpen } = useSelector((state) => state.checkout);
+
   return (
-    <Wrapper className='checkout-aside open'>
+    <Wrapper
+      className={isCheckoutOpen ? 'checkout-aside open' : 'checkout-aside'}
+    >
       <div className='content'>
         <header>
           <div className='logo'>
@@ -44,11 +48,13 @@ const CheckoutAside = () => {
 
 const Wrapper = styled.aside`
   position: fixed;
+  width: 100vw;
+  height: 100vh;
+  padding-bottom: 20px;
   inset: 0;
   z-index: -1;
   opacity: 0;
   background: rgba(0, 0, 0, 0.5);
-  padding: 24px;
   cursor: pointer;
   transition: all 0.3s ease;
   overflow: scroll;
@@ -62,8 +68,8 @@ const Wrapper = styled.aside`
     cursor: initial;
     background: var(--white-color);
     padding: 32px;
+    margin: 225px 24px 50px 24px;
     border-radius: 8px;
-    margin-top: 225px;
   }
 
   .logo {
@@ -130,11 +136,3 @@ const Wrapper = styled.aside`
   }
 `;
 export default CheckoutAside;
-
-// MENU
-// CHECKOUT SLICE
-// OPACITY TO BODY
-// TEXT_TRANSFORM CLASS
-// RESPONSIVE IMAGE
-// TABLET
-// DESKTOP

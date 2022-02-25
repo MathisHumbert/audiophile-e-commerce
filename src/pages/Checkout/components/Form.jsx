@@ -1,24 +1,14 @@
-import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import FormControl from './FormControl';
 import FormControlPayment from './FormControlPayment';
 import images from '../../../assets';
-
-const initialState = {
-  name: '',
-  email: '',
-  phone: '',
-  address: '',
-  zip: '',
-  city: '',
-  country: '',
-  emoney: true,
-  emoneyNumber: '',
-  emoneyPin: '',
-};
+import { onFormChange } from '../../../redux/features/checkoutSlice';
+import { controlInput } from '../../../utils/helpers';
 
 const Form = () => {
-  const [formData, setFormData] = useState(initialState);
+  const dispatch = useDispatch();
+  const { checkout } = useSelector((state) => state.checkout);
 
   const {
     name,
@@ -31,26 +21,19 @@ const Form = () => {
     emoney,
     emoneyNumber,
     emoneyPin,
-  } = formData;
+  } = checkout;
 
   const onChange = (e) => {
-    console.log(e.target.value);
-    setFormData((prevState) => ({
-      ...prevState,
-      [e.target.id]: e.target.value,
-    }));
+    controlInput(e);
+    dispatch(onFormChange({ id: e.target.id, value: e.target.value }));
   };
 
-  const onChangeEmoney = (value) => {
-    setFormData((prevState) => ({ ...prevState, emoney: value }));
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
+  const onMoneyChange = (value) => {
+    dispatch(onFormChange({ id: 'emoney', value }));
   };
 
   return (
-    <Wrapper onSubmit={onSubmit}>
+    <Wrapper onSubmit={(e) => e.preventDefault()}>
       <h4>checkout</h4>
       {/* BILLING DETAILS */}
       <div className='form-container'>
@@ -80,7 +63,7 @@ const Form = () => {
               name='phone'
               value={phone}
               onChange={onChange}
-              type='tel'
+              type='number'
               title='Phone Number'
               placeholder='+1 202-555-0136'
             />
@@ -136,13 +119,13 @@ const Form = () => {
             <FormControlPayment
               name='emoney'
               value={emoney}
-              onChange={onChangeEmoney}
+              onChange={onMoneyChange}
               title='e-Money'
             />
             <FormControlPayment
               name='cash'
               value={!emoney}
-              onChange={onChangeEmoney}
+              onChange={onMoneyChange}
               title='Cash on Delivery'
             />
           </div>
