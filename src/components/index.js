@@ -6,6 +6,7 @@ import PageProducts from './PageProducts';
 import CartAside from './CartAside';
 import Footer from './Footer';
 import GoBack from './GoBack';
+import MenuAside from './MenuAside';
 
 export {
   About,
@@ -16,4 +17,5 @@ export {
   CartAside,
   Footer,
   GoBack,
+  MenuAside,
 };

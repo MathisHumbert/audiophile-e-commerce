@@ -4,13 +4,16 @@ import { Link } from 'react-router-dom';
 import { FaCheck } from 'react-icons/fa';
 import { formatPrice } from '../../../utils/helpers';
 import Item from './Item';
-import { closeCheckout } from '../../../redux/features/checkoutSlice';
+import { toggleCheckoutAside } from '../../../redux/features/asideSlice';
 
 const CheckoutAside = () => {
   const dispatch = useDispatch();
-  const { isCheckoutOpen, checkoutCart, checkoutCartTotal } = useSelector(
+  const { checkoutCart, checkoutCartTotal } = useSelector(
     (state) => state.checkout
   );
+  const { isCheckoutOpen } = useSelector((state) => state.aside);
+
+  console.log(checkoutCart);
 
   return (
     <Wrapper
@@ -29,7 +32,7 @@ const CheckoutAside = () => {
         <div className='container'>
           <div className='items'>
             <Item {...checkoutCart[0]} />
-            {checkoutCart.length > 0 && (
+            {checkoutCart.length > 1 && (
               <>
                 <hr />
                 <p className='small'>
@@ -43,7 +46,11 @@ const CheckoutAside = () => {
             <h5>{formatPrice(checkoutCartTotal)}</h5>
           </div>
         </div>
-        <Link to='/' className='btn' onClick={() => dispatch(closeCheckout())}>
+        <Link
+          to='/'
+          className='btn'
+          onClick={() => dispatch(toggleCheckoutAside())}
+        >
           back to home
         </Link>
       </div>
@@ -60,9 +67,9 @@ const Wrapper = styled.aside`
   z-index: -1;
   opacity: 0;
   background: rgba(0, 0, 0, 0.5);
-  cursor: pointer;
   transition: all 0.3s ease;
   overflow: scroll;
+  cursor: initial;
 
   &.open {
     z-index: 5;

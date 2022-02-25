@@ -5,6 +5,7 @@ import {
   resetForm,
   addCartToCheckout,
 } from '../../../redux/features/checkoutSlice';
+import { toggleCheckoutAside } from '../../../redux/features/asideSlice';
 import { controlForm, formatPrice } from '../../../utils/helpers';
 import Item from './Item';
 
@@ -20,6 +21,7 @@ const Summary = () => {
       dispatch(resetForm());
       dispatch(addCartToCheckout({ cart, total }));
       dispatch(clearCart());
+      dispatch(toggleCheckoutAside());
     }
   };
 

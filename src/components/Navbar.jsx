@@ -1,30 +1,29 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import images from '../assets';
-import { toggleCart } from '../redux/features/cartSlice';
+import { toggleCartAside, toggleMenuAside } from '../redux/features/asideSlice';
 
 const Navbar = () => {
   const dispatch = useDispatch();
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const { isMenuOpen } = useSelector((state) => state.aside);
 
   return (
     <Wrapper>
-      <div
+      <button
         className={
-          isSidebarOpen ? 'bar-container bar-close' : 'bar-container bar-line'
+          isMenuOpen ? 'bar-container bar-close' : 'bar-container bar-line'
         }
-        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        onClick={() => dispatch(toggleMenuAside())}
       >
         <div className='bar1 bar'></div>
         <div className='bar2 bar'></div>
         <div className='bar3 bar'></div>
-      </div>
+      </button>
       <Link to='/'>
         <img src={images.companyLogo} alt='company-logo' />
       </Link>
-      <button className='checkout' onClick={() => dispatch(toggleCart())}>
+      <button className='checkout' onClick={() => dispatch(toggleCartAside())}>
         <img src={images.checkoutLogo} alt='checkout-logo' />
       </button>
     </Wrapper>

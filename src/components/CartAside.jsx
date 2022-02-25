@@ -3,18 +3,14 @@ import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { formatPrice } from '../utils/helpers';
-import {
-  toggleCart,
-  toggleCartInfo,
-  clearCart,
-} from '../redux/features/cartSlice';
+import { toggleCartInfo, clearCart } from '../redux/features/cartSlice';
+import { toggleCartAside } from '../redux/features/asideSlice';
 import CartItem from './CartItem';
 
 const CartAside = () => {
   const dispatch = useDispatch();
-  const { cart, total, amount, isCartOpen } = useSelector(
-    (state) => state.cart
-  );
+  const { cart, total, amount } = useSelector((state) => state.cart);
+  const { isCartOpen } = useSelector((state) => state.aside);
 
   useEffect(() => {
     dispatch(toggleCartInfo());
@@ -22,7 +18,7 @@ const CartAside = () => {
 
   const handleClick = (e) => {
     if (!e.target.classList.contains('cart-aside')) return;
-    dispatch(toggleCart());
+    dispatch(toggleCartAside());
   };
 
   return (
@@ -58,7 +54,7 @@ const CartAside = () => {
               <Link
                 to='/checkout'
                 className='btn'
-                onClick={() => dispatch(toggleCart())}
+                onClick={() => dispatch(toggleCartAside())}
               >
                 checkout
               </Link>

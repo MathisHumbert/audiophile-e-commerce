@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaChevronRight } from 'react-icons/fa';
 import { categoriesData } from '../utils/data';
 
-const Categories = () => {
+const Categories = ({ onClick }) => {
   return (
     <Wrapper>
       {categoriesData.map((item) => {
@@ -12,7 +12,7 @@ const Categories = () => {
           <article key={id}>
             <img src={img} alt='title' />
             <h6>{title}</h6>
-            <Link to={url} className='subtitle'>
+            <Link to={url} className='subtitle' onClick={onClick}>
               shop <FaChevronRight />
             </Link>
           </article>
@@ -36,6 +36,7 @@ const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 8px;
   }
 
   img {

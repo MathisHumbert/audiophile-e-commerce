@@ -5,6 +5,7 @@ const initialState = {
   product: [],
   isLoading: false,
   isError: false,
+  isMenuOpen: false,
 };
 
 export const fetchProduct = createAsyncThunk('product/get', async (id) => {

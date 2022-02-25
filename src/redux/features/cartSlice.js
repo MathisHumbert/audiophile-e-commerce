@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { preventScroll } from '../../utils/helpers';
 
 const localCart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -7,18 +6,12 @@ const initialState = {
   cart: localCart,
   amount: 0,
   total: 0,
-  isCartOpen: false,
 };
 
 const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    toggleCart: (state) => {
-      state.isCartOpen = !state.isCartOpen;
-
-      preventScroll(state.isCartOpen);
-    },
     addItemToCart: (state, action) => {
       const newItem = action.payload;
       let itemAlreadyExists = false;
@@ -84,7 +77,6 @@ const cartSlice = createSlice({
 });
 
 export const {
-  toggleCart,
   addItemToCart,
   clearCart,
   deleteItem,

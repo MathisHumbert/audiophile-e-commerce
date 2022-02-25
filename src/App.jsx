@@ -7,13 +7,14 @@ import {
   Product,
   Speakers,
 } from './pages';
-import { Navbar, Footer, CartAside } from './components';
+import { Navbar, Footer, CartAside, MenuAside } from './components';
 
 const App = () => {
   return (
     <Router>
       <Navbar />
       <CartAside />
+      <MenuAside />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/headphones' element={<Headphones />} />

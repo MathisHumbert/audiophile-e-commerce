@@ -15,7 +15,6 @@ const initialState = {
   },
   checkoutCart: [],
   checkoutCartTotal: 0,
-  isCheckoutOpen: false,
 };
 
 const checkoutSlice = createSlice({
@@ -28,16 +27,13 @@ const checkoutSlice = createSlice({
     },
     resetForm: () => initialState,
     addCartToCheckout: (state, action) => {
-      state.isCheckoutOpen = true;
+      console.log(action.payload);
       state.checkoutCart = action.payload.cart;
       state.checkoutCartTotal = action.payload.total;
-    },
-    closeCheckout: (state) => {
-      state.isCheckoutOpen = false;
     },
   },
 });
 
-export const { onFormChange, resetForm, addCartToCheckout, closeCheckout } =
+export const { onFormChange, resetForm, addCartToCheckout } =
   checkoutSlice.actions;
 export default checkoutSlice.reducer;

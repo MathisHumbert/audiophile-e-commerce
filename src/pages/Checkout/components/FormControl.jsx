@@ -66,6 +66,16 @@ const Wrapper = styled.div`
     }
   }
 
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
   &.error {
     label {
       color: #cd2c2c;
