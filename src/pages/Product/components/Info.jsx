@@ -3,7 +3,8 @@ import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import ProductButton from '../../../components/ProductButton';
 import { formatPrice } from '../../../utils/helpers';
-import { addItemToCart, openCart } from '../../../redux/features/cartSlice';
+import { addItemToCart } from '../../../redux/features/cartSlice';
+import { toggleCartAside } from '../../../redux/features/asideSlice';
 
 const Info = ({
   description,
@@ -39,6 +40,7 @@ const Info = ({
       img: `/assets/cart/image-${slug}.jpg`,
     };
     dispatch(addItemToCart(item));
+    dispatch(toggleCartAside());
     setAmount(1);
   };
 

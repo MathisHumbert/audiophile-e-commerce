@@ -67,26 +67,14 @@ const CartAside = () => {
 };
 
 const Wrapper = styled.aside`
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  opacity: 0;
-  background: rgba(0, 0, 0, 0.5);
   top: 89px;
-  padding: 24px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  overflow: scroll;
-
-  &.open {
-    z-index: 5;
-    opacity: 1;
-  }
+  padding: 24px 0;
 
   .content {
     cursor: initial;
     background: var(--white-color);
     padding: 32px 28px;
+    margin: 0 24px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;

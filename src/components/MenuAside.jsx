@@ -29,23 +29,7 @@ const MenuAside = () => {
 };
 
 const Wrapper = styled.aside`
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  padding-bottom: 20px;
-  z-index: -1;
-  opacity: 0;
-  background: rgba(0, 0, 0, 0.4);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  overflow: scroll;
   top: 89px;
-
-  &.open {
-    z-index: 5;
-    opacity: 1;
-  }
 
   .content {
     cursor: initial;

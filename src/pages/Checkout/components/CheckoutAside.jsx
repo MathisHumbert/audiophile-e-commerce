@@ -59,22 +59,7 @@ const CheckoutAside = () => {
 };
 
 const Wrapper = styled.aside`
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  padding-bottom: 20px;
-  inset: 0;
-  z-index: -1;
-  opacity: 0;
-  background: rgba(0, 0, 0, 0.5);
-  transition: all 0.3s ease;
-  overflow: scroll;
   cursor: initial;
-
-  &.open {
-    z-index: 5;
-    opacity: 1;
-  }
 
   .content {
     cursor: initial;
