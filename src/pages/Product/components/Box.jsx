@@ -19,7 +19,7 @@ const Box = ({ box }) => {
 };
 
 const Wrapper = styled.section`
-  padding: 88px 24px 0 24px;
+  padding-top: 88px;
 
   .container {
     display: flex;
@@ -38,6 +38,20 @@ const Wrapper = styled.section`
 
     li:last-child {
       opacity: 0.5;
+    }
+  }
+
+  .title {
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: 768px) {
+    padding-top: 120px;
+    display: flex;
+    gap: 172px;
+
+    .title {
+      margin-bottom: 0;
     }
   }
 `;

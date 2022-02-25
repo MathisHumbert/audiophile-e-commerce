@@ -29,7 +29,7 @@ const MenuAside = () => {
 };
 
 const Wrapper = styled.aside`
-  top: 89px;
+  top: 86.27px;
 
   .content {
     cursor: initial;

@@ -23,7 +23,7 @@ const Product = () => {
   }
 
   return (
-    <main>
+    <main className='main-center'>
       <GoBack />
       <Info {...product[0]} />
       <Features features={product[0].features} />

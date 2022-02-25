@@ -19,5 +19,9 @@ const Wrapper = styled.header`
   h4 {
     color: var(--white-color);
   }
+
+  @media (min-width: 247px) {
+    height: 247px;
+  }
 `;
 export default HeaderProducts;

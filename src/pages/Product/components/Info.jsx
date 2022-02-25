@@ -46,7 +46,12 @@ const Info = ({
 
   return (
     <Wrapper>
-      <img src={image.mobile} alt={name} />
+      <picture>
+        <source media='(max-width: 768px)' srcSet={image.mobile} alt={name} />
+        <source media='(max-width: 1440px)' srcSet={image.tablet} alt={name} />
+        <source media='(min-width: 1440px)' srcSet={image.desktop} alt={name} />
+        <img src={image.mobile} alt={name} />
+      </picture>
       <div className='container'>
         {isNew && <p className='overline'>new product</p>}
         <h4>{name}</h4>
@@ -68,13 +73,16 @@ const Info = ({
 };
 
 const Wrapper = styled.section`
-  padding: 0 24px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  width: 100%;
 
   img {
     width: 100%;
+    max-height: 480px;
+    object-fit: cover;
+    border-radius: 8px;
   }
 
   .container {
@@ -96,6 +104,22 @@ const Wrapper = styled.section`
     height: 48px;
     margin-right: 2rem;
     margin-top: 8px;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 69px;
+
+    img {
+      min-width: 281px;
+    }
+
+    .container {
+      max-width: 445px;
+    }
   }
 `;
 export default Info;

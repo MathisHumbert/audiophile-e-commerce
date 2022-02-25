@@ -111,10 +111,6 @@ h6 {
   text-transform: uppercase;
 }
 
-.title {
-  margin-bottom: 24px;
-}
-
 .btn {
   font-weight: 700;
   font-size: 13px;
@@ -143,7 +139,7 @@ h6 {
   text-decoration: none;
   color: var(--black-color);
   opacity: 0.5;
-  padding: 16px 0 24px 24px;
+  padding: 16px 0 24px;
 }
 
 .bar-container {
@@ -303,5 +299,14 @@ h6 {
     font-size: 40px;
     line-height: 44px;
     letter-spacing: 1.43px;
+  }
+
+  h3 {
+    font-size: 32px;
+    letter-spacing: 1.14px;
+  }
+
+  .go-back {
+    padding: 32px 0 24px;
   }
 }

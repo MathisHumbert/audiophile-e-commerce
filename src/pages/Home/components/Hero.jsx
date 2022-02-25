@@ -21,7 +21,7 @@ const Hero = () => {
 };
 
 const Wrapper = styled.section`
-  height: calc(100vh - 89px);
+  height: calc(100vh - 86.27px);
   width: 100%;
   background-image: url(${images.homeHeroMobile});
   background-position: center;

@@ -8,13 +8,32 @@ const PageProducts = ({ products }) => {
         const { id, img, isNew, title, text, url } = item;
         return (
           <article key={id}>
-            <img src={img} alt={title} className='product-img' />
-            {isNew && <p className='overline'>new product</p>}
-            <h4>{title}</h4>
-            <p className='body'>{text}</p>
-            <Link to={url} className='btn'>
-              see product
-            </Link>
+            <picture>
+              <source
+                media='(max-width: 768px)'
+                srcSet={img.mobile}
+                alt={title}
+              />
+              <source
+                media='(max-width: 1440px)'
+                srcSet={img.tablet}
+                alt={title}
+              />
+              <source
+                media='(min-width: 1440px)'
+                srcSet={img.desktop}
+                alt={title}
+              />
+              <img src={img.mobile} alt={title} />
+            </picture>
+            <div className='info'>
+              {isNew && <p className='overline'>new product</p>}
+              <h2>{title}</h2>
+              <p className='body'>{text}</p>
+              <Link to={url} className='btn'>
+                see product
+              </Link>
+            </div>
           </article>
         );
       })}
@@ -23,7 +42,7 @@ const PageProducts = ({ products }) => {
 };
 
 const Wrapper = styled.section`
-  padding: 64px 24px 120px 24px;
+  padding: 64px 0 120px;
   display: flex;
   flex-direction: column;
   gap: 120px;
@@ -31,14 +50,24 @@ const Wrapper = styled.section`
   article {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 32px;
     align-items: center;
     text-align: center;
   }
 
   img {
     width: 100%;
-    margin-bottom: 8px;
+    max-height: 352px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    max-width: 572px;
   }
 
   .overline {

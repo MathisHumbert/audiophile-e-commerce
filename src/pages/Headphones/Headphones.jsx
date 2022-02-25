@@ -10,9 +10,11 @@ const Headphones = () => {
   return (
     <main>
       <HeaderProducts title='headphones' />
-      <PageProducts products={headphonesPageData} />
-      <Categories />
-      <About />
+      <div className='main-center'>
+        <PageProducts products={headphonesPageData} />
+        <Categories />
+        <About />
+      </div>
     </main>
   );
 };

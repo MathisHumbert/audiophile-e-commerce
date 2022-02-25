@@ -30,7 +30,7 @@ const Featured = ({ featured }) => {
                   <img src={image.mobile} alt='first-img' />
                 </picture>
               </div>
-              <h3>{name}</h3>
+              <h4>{name}</h4>
               <Link to={`/products/${slug}`} className='btn'>
                 see product
               </Link>
@@ -43,7 +43,7 @@ const Featured = ({ featured }) => {
 };
 
 const Wrapper = styled.section`
-  padding: 120px 24px;
+  padding: 120px 0;
 
   .title {
     text-align: center;
@@ -68,6 +68,18 @@ const Wrapper = styled.section`
     width: 100%;
     object-fit: cover;
     border-radius: 8px;
+  }
+
+  @media (min-width: 768px) {
+    .title {
+      margin-bottom: 56px;
+    }
+
+    .container {
+      flex-direction: row;
+      align-items: center;
+      gap: 11px;
+    }
   }
 `;
 export default Featured;

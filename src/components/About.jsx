@@ -3,8 +3,25 @@ import images from '../assets';
 
 const About = () => {
   return (
-    <Wrapper>
-      <img src={images.aboutMobile} alt='about' />
+    <Wrapper className='about-section'>
+      <picture>
+        <source
+          media='(max-width: 768px)'
+          srcSet={images.aboutMobile}
+          alt='about-img'
+        />
+        <source
+          media='(max-width: 1440px)'
+          srcSet={images.aboutTablet}
+          alt='about-img'
+        />
+        <source
+          media='(min-width: 1440px)'
+          srcSet={images.aboutDesktop}
+          alt='about-img'
+        />
+        <img src={images.aboutMobile} alt='about-img' />
+      </picture>
       <div>
         <h2>
           Bringing you the <span>best</span> audio gear
@@ -32,6 +49,9 @@ const Wrapper = styled.section`
   img {
     width: 100%;
     border-radius: 8px;
+    object-fit: cover;
+    height: 300px;
+    max-height: 300px;
   }
 
   div {
@@ -49,7 +69,6 @@ const Wrapper = styled.section`
   }
 
   @media (min-width: 768px) {
-    padding: 96px 0;
     gap: 62px;
   }
 `;

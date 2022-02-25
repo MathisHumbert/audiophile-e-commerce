@@ -5,15 +5,22 @@ import Products from './components/Products';
 
 const Home = () => {
   return (
-    <main>
+    <Wrapper>
       <Hero />
       <div className='main-center'>
         <Categories />
         <Products />
         <About />
       </div>
-    </main>
+    </Wrapper>
   );
 };
 
+const Wrapper = styled.main`
+  @media (min-width: 769px) {
+    .about-section {
+      padding: 96px 0;
+    }
+  }
+`;
 export default Home;

@@ -5,7 +5,7 @@ const Gallery = ({ gallery }) => {
 
   return (
     <Wrapper>
-      <div className='container'>
+      <div className='left'>
         <picture>
           <source
             media='(max-width: 768px)'
@@ -43,7 +43,7 @@ const Gallery = ({ gallery }) => {
           <img src={second.mobile} alt='second-img' />
         </picture>
       </div>
-      <picture>
+      <picture className='right'>
         <source
           media='(max-width: 768px)'
           srcSet={third.mobile}
@@ -66,7 +66,7 @@ const Gallery = ({ gallery }) => {
 };
 
 const Wrapper = styled.section`
-  padding: 88px 24px 0 24px;
+  padding-top: 88px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -77,9 +77,28 @@ const Wrapper = styled.section`
     border-radius: 8px;
   }
 
-  .container {
-    picture:first-child img {
-      margin-bottom: 20px;
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    img {
+      max-height: 174px;
+    }
+  }
+
+  .right img {
+    max-height: 368px;
+  }
+
+  @media (min-width: 768px) {
+    padding-top: 120px;
+    flex-direction: row;
+    width: 100%;
+
+    .right img,
+    .left img {
+      max-height: inherit;
     }
   }
 `;

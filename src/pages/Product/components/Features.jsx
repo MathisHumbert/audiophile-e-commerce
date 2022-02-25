@@ -20,7 +20,7 @@ const Features = ({ features }) => {
 };
 
 const Wrapper = styled.section`
-  padding: 88px 24px 0 24px;
+  padding-top: 88px;
 
   .body {
     opacity: 0.5;
@@ -31,6 +31,18 @@ const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     gap: 25px;
+  }
+
+  .title {
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: 768px) {
+    padding-top: 120px;
+
+    .title {
+      margin-bottom: 2rem;
+    }
   }
 `;
 export default Features;

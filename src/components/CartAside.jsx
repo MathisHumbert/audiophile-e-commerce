@@ -67,7 +67,7 @@ const CartAside = () => {
 };
 
 const Wrapper = styled.aside`
-  top: 89px;
+  top: 86.27px;
   padding: 24px 0;
 
   .content {
@@ -79,6 +79,8 @@ const Wrapper = styled.aside`
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    max-width: 488px;
+    margin-left: auto;
   }
 
   .empty {

@@ -66,15 +66,23 @@ export const footerIconsData = [
 export const headphonesPageData = [
   {
     id: 1,
-    img: images.headphonesProduct1Mobile,
+    img: {
+      mobile: images.headphonesProduct1Mobile,
+      tablet: images.headphonesProduct1Tablet,
+      desktop: images.headphonesProduct1Desktop,
+    },
     isNew: true,
-    title: 'XX99 Mark II Headphones',
+    title: 'XX99 Mark II  Headphones',
     text: 'The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.',
     url: '/products/xx99-mark-two-headphones',
   },
   {
     id: 2,
-    img: images.headphonesProduct2Mobile,
+    img: {
+      mobile: images.headphonesProduct2Mobile,
+      tablet: images.headphonesProduct2Tablet,
+      desktop: images.headphonesProduct2Desktop,
+    },
     isNew: false,
     title: 'XX99 Mark I Headphones',
     text: 'As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.',
@@ -82,7 +90,11 @@ export const headphonesPageData = [
   },
   {
     id: 3,
-    img: images.headphonesProduct3Mobile,
+    img: {
+      mobile: images.headphonesProduct3Mobile,
+      tablet: images.headphonesProduct3Tablet,
+      desktop: images.headphonesProduct3Desktop,
+    },
     isNew: false,
     title: 'XX59 Headphones',
     text: 'Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.',
@@ -93,7 +105,11 @@ export const headphonesPageData = [
 export const earphonesPageData = [
   {
     id: 1,
-    img: images.earphonesProductMobile,
+    img: {
+      mobile: images.earphonesProductMobile,
+      tablet: images.earphonesProductTablet,
+      desktop: images.earphonesProductDesktop,
+    },
     isNew: true,
     title: 'YX1 WIRELESS EARPHONES',
     text: 'Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.',
@@ -104,7 +120,11 @@ export const earphonesPageData = [
 export const speakersPageData = [
   {
     id: 1,
-    img: images.speakersProduct1Mobile,
+    img: {
+      mobile: images.speakersProduct1Mobile,
+      tablet: images.speakersProduct1Tablet,
+      desktop: images.speakersProduct1Desktop,
+    },
     isNew: true,
     title: 'ZX9 speaker',
     text: 'Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.',
@@ -112,7 +132,11 @@ export const speakersPageData = [
   },
   {
     id: 2,
-    img: images.speakersProduct2Mobile,
+    img: {
+      mobile: images.speakersProduct2Mobile,
+      tablet: images.speakersProduct2Tablet,
+      desktop: images.speakersProduct2Desktop,
+    },
     isNew: false,
     title: 'ZX7 speaker',
     text: 'Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.',
