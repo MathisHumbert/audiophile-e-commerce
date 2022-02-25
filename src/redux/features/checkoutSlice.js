@@ -32,9 +32,12 @@ const checkoutSlice = createSlice({
       state.checkoutCart = action.payload.cart;
       state.checkoutCartTotal = action.payload.total;
     },
+    closeCheckout: (state) => {
+      state.isCheckoutOpen = false;
+    },
   },
 });
 
-export const { onFormChange, resetForm, addCartToCheckout } =
+export const { onFormChange, resetForm, addCartToCheckout, closeCheckout } =
   checkoutSlice.actions;
 export default checkoutSlice.reducer;

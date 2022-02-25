@@ -1,11 +1,13 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FaCheck } from 'react-icons/fa';
 import { formatPrice } from '../../../utils/helpers';
 import Item from './Item';
+import { closeCheckout } from '../../../redux/features/checkoutSlice';
 
 const CheckoutAside = () => {
+  const dispatch = useDispatch();
   const { isCheckoutOpen, checkoutCart, checkoutCartTotal } = useSelector(
     (state) => state.checkout
   );
@@ -41,7 +43,7 @@ const CheckoutAside = () => {
             <h5>{formatPrice(checkoutCartTotal)}</h5>
           </div>
         </div>
-        <Link to='/' className='btn'>
+        <Link to='/' className='btn' onClick={() => dispatch(closeCheckout())}>
           back to home
         </Link>
       </div>
