@@ -5,7 +5,24 @@ import images from '../../../assets';
 const Product1 = () => {
   return (
     <Wrapper>
-      <img src={images.homeProduct1Mobile} alt='zx9-speaker' />
+      <picture>
+        <source
+          media='(max-width: 768px)'
+          srcSet={images.homeProduct1Mobile}
+          alt='zx9-speaker'
+        />
+        <source
+          media='(max-width: 1440px)'
+          srcSet={images.homeProduct1Tablet}
+          alt='zx9-speaker'
+        />
+        <source
+          media='(min-width: 1440px)'
+          srcSet={images.homeProduct1Desktop}
+          alt='zx9-speaker'
+        />
+        <img src={images.homeProduct1Mobile} alt='first-img' />
+      </picture>
       <div className='info'>
         <h1>
           zx9 <br /> speaker
@@ -15,7 +32,7 @@ const Product1 = () => {
           truly remarkable sound.
         </p>
         <Link to='/products/zx9-speaker' className='btn'>
-          see products
+          see product
         </Link>
       </div>
     </Wrapper>
@@ -24,6 +41,7 @@ const Product1 = () => {
 
 const Wrapper = styled.article`
   padding: 55px 24px;
+  height: 600px;
   background: var(--orange-color);
   background-image: url(${images.circleSvg});
   background-position: center;
@@ -33,6 +51,7 @@ const Wrapper = styled.article`
   flex-direction: column;
   gap: 2rem;
   align-items: center;
+  justify-content: space-between;
   border-radius: 8px;
 
   img {
@@ -47,6 +66,7 @@ const Wrapper = styled.article`
   .body {
     color: var(--white-color);
     margin: 24px 0 24px 0;
+    max-width: 350px;
   }
 
   .body {
@@ -55,6 +75,15 @@ const Wrapper = styled.article`
 
   .btn {
     background: var(--black-color);
+  }
+
+  @media (min-width: 768px) {
+    padding: 52px 0 64px;
+    height: 600px;
+
+    img {
+      width: 197px;
+    }
   }
 `;
 export default Product1;

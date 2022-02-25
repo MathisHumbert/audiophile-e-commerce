@@ -56,19 +56,20 @@ h1 {
   text-transform: uppercase;
 }
 
-h3 {
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 36px;
-  letter-spacing: 0.88px;
-  text-transform: uppercase;
-}
-
+h2,
 h4 {
   font-weight: 700;
   font-size: 28px;
   line-height: 38px;
   letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  letter-spacing: 0.88px;
   text-transform: uppercase;
 }
 
@@ -222,7 +223,7 @@ h6 {
 
 .bar2 {
   width: 12px;
-  transition: width 0.2s ease;
+  transition: width 0.2s linear;
 }
 
 @keyframes bar1-close {
@@ -284,5 +285,23 @@ h6 {
   100% {
     top: 12px;
     transform: skewY(0);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main-center {
+    padding: 0 40px;
+  }
+
+  h1 {
+    font-size: 56px;
+    line-height: 58px;
+    letter-spacing: 2px;
+  }
+
+  h2 {
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 1.43px;
   }
 }

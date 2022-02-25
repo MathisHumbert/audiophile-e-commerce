@@ -18,9 +18,6 @@ ReactDOM.render(
 
 reportWebVitals();
 
-// MENU
-// OPACITY TO BODY
-// TEXT_TRANSFORM CLASS
 // HOVER
 // RESPONSIVE IMAGE
 // TABLET

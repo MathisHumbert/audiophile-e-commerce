@@ -23,7 +23,7 @@ const Categories = ({ onClick }) => {
 };
 
 const Wrapper = styled.section`
-  padding: 50px 24px 0 24px;
+  padding-top: 50px;
   display: flex;
   flex-direction: column;
   gap: 66px;
@@ -57,6 +57,11 @@ const Wrapper = styled.section`
 
   svg {
     color: var(--orange-color);
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 10px;
   }
 `;
 export default Categories;

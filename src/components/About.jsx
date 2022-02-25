@@ -5,10 +5,10 @@ const About = () => {
   return (
     <Wrapper>
       <img src={images.aboutMobile} alt='about' />
-      <article>
-        <h4>
+      <div>
+        <h2>
           Bringing you the <span>best</span> audio gear
-        </h4>
+        </h2>
         <p className='body'>
           Located at the heart of New York City, Audiophile is the premier store
           for high end headphones, earphones, speakers, and audio accessories.
@@ -17,13 +17,13 @@ const About = () => {
           store to meet some of the fantastic people who make Audiophile the
           best place to buy your portable audio equipment.
         </p>
-      </article>
+      </div>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.section`
-  padding: 120px 24px;
+  padding: 120px 0;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -31,6 +31,12 @@ const Wrapper = styled.section`
 
   img {
     width: 100%;
+    border-radius: 8px;
+  }
+
+  div {
+    max-width: 573px;
+    margin: 0 auto;
   }
 
   .body {
@@ -40,6 +46,11 @@ const Wrapper = styled.section`
 
   span {
     color: var(--orange-color);
+  }
+
+  @media (min-width: 768px) {
+    padding: 96px 0;
+    gap: 62px;
   }
 `;
 export default About;

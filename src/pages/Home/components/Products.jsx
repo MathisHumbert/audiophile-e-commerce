@@ -14,10 +14,14 @@ const Products = () => {
 };
 
 const Wrapper = styled.section`
-  padding: 120px 24px 0 24px;
+  padding-top: 120px;
   display: flex;
   flex-direction: column;
   gap: 24px;
+
+  @media (min-width: 768px) {
+    gap: 32px;
+  }
 `;
 
 export default Products;

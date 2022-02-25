@@ -20,7 +20,7 @@ const Navbar = () => {
         <div className='bar2 bar'></div>
         <div className='bar3 bar'></div>
       </button>
-      <Link to='/'>
+      <Link to='/' className='logo'>
         <img src={images.companyLogo} alt='company-logo' />
       </Link>
       <button className='checkout' onClick={() => dispatch(toggleCartAside())}>
@@ -36,10 +36,27 @@ const Wrapper = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 
   .checkout {
     background: 0;
     border: 0;
+  }
+
+  .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media (min-width: 768px) {
+    padding: 32px 40px;
+
+    .logo {
+      left: 98px;
+      transform: translate(0, -50%);
+    }
   }
 `;
 export default Navbar;

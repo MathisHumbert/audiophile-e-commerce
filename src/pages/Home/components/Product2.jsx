@@ -32,5 +32,9 @@ const Wrapper = styled.article`
     flex-direction: column;
     gap: 32px;
   }
+
+  @media (min-width: 768px) {
+    background-image: url(${images.homeProduct2Tablet});
+  }
 `;
 export default Product2;

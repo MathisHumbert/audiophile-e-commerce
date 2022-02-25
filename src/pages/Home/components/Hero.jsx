@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import images from '../../../assets';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -11,16 +12,18 @@ const Hero = () => {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
-        <button className='btn'>see product</button>
+        <Link to='/products/xx99-mark-two-headphones' className='btn'>
+          see product
+        </Link>
       </div>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.section`
-  background-image: url(${images.homeHeroMobile});
   height: calc(100vh - 89px);
   width: 100%;
+  background-image: url(${images.homeHeroMobile});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -48,10 +51,17 @@ const Wrapper = styled.section`
   .body {
     color: var(--white-color);
     opacity: 0.75;
+    max-width: 350px;
+    margin: 0 auto;
   }
 
-  button {
+  .btn {
     margin-top: 28px;
+  }
+
+  @media (min-width: 768px) {
+    background-image: url(${images.homeHeroTablet});
+    margin-bottom: 96px;
   }
 `;
 export default Hero;

@@ -32,12 +32,37 @@ const Wrapper = styled.article`
   }
 
   .bottom {
+    width: 100%;
+    height: 200px;
     background: var(--grey-color);
-    padding: 41px 56px 41px 24px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 32px;
+
+    h4,
+    a {
+      margin-left: 24px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 11px;
+
+    .top {
+      height: 320px;
+      background-image: url(${images.homeProduct3Tablet});
+    }
+    .bottom {
+      height: 320px;
+
+      h4,
+      a {
+        margin-left: 41px;
+      }
+    }
   }
 `;
 export default Product3;

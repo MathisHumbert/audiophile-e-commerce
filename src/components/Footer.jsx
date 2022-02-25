@@ -94,5 +94,28 @@ const Wrapper = styled.footer`
     color: var(--white-color);
     opacity: 0.5;
   }
+
+  @media (min-width: 768px) {
+    padding: 60px 40px 46px 40px;
+    align-items: flex-start;
+    gap: 2rem;
+
+    .links {
+      flex-direction: row;
+      gap: 34px;
+    }
+
+    .body {
+      text-align: justify;
+    }
+
+    .bottom {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0;
+      margin-top: 48px;
+    }
+  }
 `;
 export default Footer;

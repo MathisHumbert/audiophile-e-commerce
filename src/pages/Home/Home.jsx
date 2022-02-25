@@ -5,14 +5,15 @@ import Products from './components/Products';
 
 const Home = () => {
   return (
-    <Wrapper>
+    <main>
       <Hero />
-      <Categories />
-      <Products />
-      <About />
-    </Wrapper>
+      <div className='main-center'>
+        <Categories />
+        <Products />
+        <About />
+      </div>
+    </main>
   );
 };
 
-const Wrapper = styled.main``;
 export default Home;
