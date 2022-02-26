@@ -22,5 +22,11 @@ const Wrapper = styled.main`
       padding: 96px 0;
     }
   }
+
+  @media (min-width: 769px) {
+    .about-section {
+      padding: 200px 0;
+    }
+  }
 `;
 export default Home;

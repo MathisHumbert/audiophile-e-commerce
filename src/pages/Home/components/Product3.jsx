@@ -55,12 +55,28 @@ const Wrapper = styled.article`
       height: 320px;
       background-image: url(${images.homeProduct3Tablet});
     }
+
     .bottom {
       height: 320px;
 
       h4,
       a {
         margin-left: 41px;
+      }
+    }
+  }
+
+  @media (min-width: 1440px) {
+    gap: 30px;
+
+    .top {
+      background-image: url(${images.homeProduct3Desktop});
+    }
+
+    .bottom {
+      h4,
+      a {
+        margin-left: 95px;
       }
     }
   }

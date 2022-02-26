@@ -22,6 +22,11 @@ const Wrapper = styled.section`
   @media (min-width: 768px) {
     gap: 32px;
   }
+
+  @media (min-width: 768px) {
+    gap: 48px;
+    padding-top: 168px;
+  }
 `;
 
 export default Products;

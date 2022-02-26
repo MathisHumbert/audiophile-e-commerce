@@ -36,5 +36,13 @@ const Wrapper = styled.article`
   @media (min-width: 768px) {
     background-image: url(${images.homeProduct2Tablet});
   }
+
+  @media (min-width: 1440px) {
+    background-image: url(${images.homeProduct2Desktop});
+
+    .info {
+      margin-left: 95px;
+    }
+  }
 `;
 export default Product2;

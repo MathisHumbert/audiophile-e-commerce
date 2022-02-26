@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import images from '../assets';
 import { toggleCartAside, toggleMenuAside } from '../redux/features/asideSlice';
+import { footerLinksData } from '../utils/data';
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -10,33 +11,53 @@ const Navbar = () => {
 
   return (
     <Wrapper>
-      <button
-        className={
-          isMenuOpen ? 'bar-container bar-close' : 'bar-container bar-line'
-        }
-        onClick={() => dispatch(toggleMenuAside())}
-      >
-        <div className='bar1 bar'></div>
-        <div className='bar2 bar'></div>
-        <div className='bar3 bar'></div>
-      </button>
-      <Link to='/' className='logo'>
-        <img src={images.companyLogo} alt='company-logo' />
-      </Link>
-      <button className='checkout' onClick={() => dispatch(toggleCartAside())}>
-        <img src={images.checkoutLogo} alt='checkout-logo' />
-      </button>
+      <div className='center'>
+        <button
+          className={
+            isMenuOpen ? 'bar-container bar-close' : 'bar-container bar-line'
+          }
+          onClick={() => dispatch(toggleMenuAside())}
+        >
+          <div className='bar1 bar'></div>
+          <div className='bar2 bar'></div>
+          <div className='bar3 bar'></div>
+        </button>
+        <Link to='/' className='logo'>
+          <img src={images.companyLogo} alt='company-logo' />
+        </Link>
+        <ul className='links'>
+          {footerLinksData.map((item) => {
+            const { id, title, url } = item;
+            return (
+              <li className='subtitle' key={id}>
+                <Link to={url}>{title}</Link>
+              </li>
+            );
+          })}
+        </ul>
+        <button
+          className='checkout'
+          onClick={() => dispatch(toggleCartAside())}
+        >
+          <img src={images.checkoutLogo} alt='checkout-logo' />
+        </button>
+      </div>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.nav`
   background: var(--black-color);
-  padding: 32px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
+
+  .center {
+    padding: 32px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
 
   .checkout {
     background: 0;
@@ -50,12 +71,36 @@ const Wrapper = styled.nav`
     transform: translate(-50%, -50%);
   }
 
+  .links {
+    display: none;
+  }
+
   @media (min-width: 768px) {
-    padding: 32px 40px;
+    .center {
+      padding: 32px 40px;
+    }
 
     .logo {
       left: 98px;
       transform: translate(0, -50%);
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .bar-container {
+      display: none;
+    }
+
+    .logo {
+      position: relative;
+      top: initial;
+      left: initial;
+      transform: translate(0, 0);
+    }
+
+    .links {
+      display: flex;
+      gap: 34px;
     }
   }
 `;

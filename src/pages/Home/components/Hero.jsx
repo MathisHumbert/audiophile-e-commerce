@@ -5,16 +5,18 @@ import { Link } from 'react-router-dom';
 const Hero = () => {
   return (
     <Wrapper>
-      <div>
-        <p className='overline'>new product</p>
-        <h1>XX99 Mark II HeadphoneS</h1>
-        <p className='body'>
-          Experience natural, lifelike audio and exceptional build quality made
-          for the passionate music enthusiast.
-        </p>
-        <Link to='/products/xx99-mark-two-headphones' className='btn'>
-          see product
-        </Link>
+      <div className='center'>
+        <div className='info'>
+          <p className='overline'>new product</p>
+          <h1>XX99 Mark II HeadphoneS</h1>
+          <p className='body'>
+            Experience natural, lifelike audio and exceptional build quality
+            made for the passionate music enthusiast.
+          </p>
+          <Link to='/products/xx99-mark-two-headphones' className='btn'>
+            see product
+          </Link>
+        </div>
       </div>
     </Wrapper>
   );
@@ -32,7 +34,7 @@ const Wrapper = styled.section`
   justify-content: center;
   margin-bottom: 40px;
 
-  div {
+  .info {
     text-align: center;
     padding: 0 24px;
   }
@@ -46,6 +48,7 @@ const Wrapper = styled.section`
     color: var(--white-color);
     margin-top: 16px;
     margin-bottom: 24px;
+    max-width: 396px;
   }
 
   .body {
@@ -62,6 +65,31 @@ const Wrapper = styled.section`
   @media (min-width: 768px) {
     background-image: url(${images.homeHeroTablet});
     margin-bottom: 96px;
+  }
+
+  @media (min-width: 1440px) {
+    background-image: url(${images.homeHeroDesktop});
+    margin-bottom: 120px;
+    align-items: center;
+    justify-content: initial;
+
+    .center {
+      width: 100%;
+      padding: 0 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .info {
+      width: 100%;
+      max-width: 1100px;
+      padding: 0;
+      text-align: left;
+    }
+
+    .body {
+      margin: 0;
+    }
   }
 `;
 export default Hero;

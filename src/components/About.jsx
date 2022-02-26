@@ -71,5 +71,18 @@ const Wrapper = styled.section`
   @media (min-width: 768px) {
     gap: 62px;
   }
+
+  @media (min-width: 1440px) {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 125px;
+    text-align: left;
+
+    img {
+      width: 540px;
+      height: 588px;
+      max-height: 588px;
+    }
+  }
 `;
 export default About;

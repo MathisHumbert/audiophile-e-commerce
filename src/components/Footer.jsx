@@ -7,52 +7,57 @@ import images from '../assets';
 const Footer = () => {
   return (
     <Wrapper>
-      <div className='top-bar'></div>
-      <Link to='/'>
-        <img src={images.companyLogo} alt='company-logo' />
-      </Link>
-      <ul className='links'>
-        {footerLinksData.map((item) => {
-          const { id, title, url } = item;
-          return (
-            <li className='subtitle' key={id}>
-              <Link to={url}>{title}</Link>
-            </li>
-          );
-        })}
-      </ul>
-      <p className='body'>
-        Audiophile is an all in one stop to fulfill your audio needs. We're a
-        small team of music lovers and sound specialists who are devoted to
-        helping you get the most out of personal audio. Come and visit our demo
-        facility - we’re open 7 days a week.
-      </p>
-      <div className='bottom'>
-        <p className='body'>Copyright 2021. All Rights Reserved</p>
-        <ul className='icons'>
-          {footerIconsData.map((item) => {
-            const { id, icon, url } = item;
+      <div className='center'>
+        <div className='top-bar'></div>
+        <Link to='/'>
+          <img src={images.companyLogo} alt='company-logo' />
+        </Link>
+        <ul className='links'>
+          {footerLinksData.map((item) => {
+            const { id, title, url } = item;
             return (
-              <li key={id}>
-                <a href={url}>{icon}</a>
+              <li className='subtitle' key={id}>
+                <Link to={url}>{title}</Link>
               </li>
             );
           })}
         </ul>
+        <p className='body text'>
+          Audiophile is an all in one stop to fulfill your audio needs. We're a
+          small team of music lovers and sound specialists who are devoted to
+          helping you get the most out of personal audio. Come and visit our
+          demo facility - we’re open 7 days a week.
+        </p>
+        <div className='bottom'>
+          <p className='body'>Copyright 2021. All Rights Reserved</p>
+          <ul className='icons'>
+            {footerIconsData.map((item) => {
+              const { id, icon, url } = item;
+              return (
+                <li key={id}>
+                  <a href={url}>{icon}</a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.footer`
-  padding: 52px 24px 38px 24px;
   background: var(--light-black-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 48px;
-  text-align: center;
-  position: relative;
+
+  .center {
+    padding: 52px 24px 38px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    text-align: center;
+    position: relative;
+  }
 
   .top-bar {
     position: absolute;
@@ -78,16 +83,16 @@ const Wrapper = styled.footer`
   .icons {
     display: flex;
     gap: 1rem;
+    transition: color 0.3s ease;
 
     li a svg {
       width: 24px;
       height: 24px;
     }
-  }
 
-  li a {
-    color: var(--white-color);
-    text-decoration: none;
+    &:hover {
+      color: var(--orange-color);
+    }
   }
 
   .body {
@@ -96,9 +101,11 @@ const Wrapper = styled.footer`
   }
 
   @media (min-width: 768px) {
-    padding: 60px 40px 46px 40px;
-    align-items: flex-start;
-    gap: 2rem;
+    .center {
+      padding: 60px 40px 46px 40px;
+      align-items: flex-start;
+      gap: 2rem;
+    }
 
     .links {
       flex-direction: row;
@@ -115,6 +122,28 @@ const Wrapper = styled.footer`
       justify-content: space-between;
       gap: 0;
       margin-top: 48px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .center {
+      max-width: 1100px;
+      padding: 75px 0 48px 0;
+      margin: 0 auto;
+    }
+
+    .text {
+      max-width: 540px;
+    }
+
+    .links {
+      position: absolute;
+      transform: translateY(4px);
+      right: 0;
+    }
+
+    .icons {
+      transform: translateY(-88px);
     }
   }
 `;

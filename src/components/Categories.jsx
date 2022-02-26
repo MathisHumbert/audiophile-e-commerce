@@ -9,13 +9,15 @@ const Categories = ({ onClick }) => {
       {categoriesData.map((item) => {
         const { id, img, title, url } = item;
         return (
-          <article key={id}>
-            <img src={img} alt='title' />
-            <h6>{title}</h6>
-            <Link to={url} className='subtitle' onClick={onClick}>
-              shop <FaChevronRight />
-            </Link>
-          </article>
+          <Link key={id} onClick={onClick} to={url}>
+            <article>
+              <img src={img} alt='title' />
+              <h6>{title}</h6>
+              <p to={url} className='subtitle'>
+                shop <FaChevronRight />
+              </p>
+            </article>
+          </Link>
         );
       })}
     </Wrapper>
@@ -28,14 +30,25 @@ const Wrapper = styled.section`
   flex-direction: column;
   gap: 66px;
 
+  a {
+    text-decoration: none;
+    width: 100%;
+    color: var(--black-color);
+
+    &:hover .subtitle {
+      color: var(--orange-color);
+      opacity: 1;
+    }
+  }
+
   article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     height: 165px;
     background: var(--grey-color);
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     border-radius: 8px;
   }
 
@@ -53,6 +66,7 @@ const Wrapper = styled.section`
     opacity: 0.5;
     margin-top: 17px;
     line-height: 0;
+    transition: color 0.3s ease, opacity 0.3s ease;
   }
 
   svg {

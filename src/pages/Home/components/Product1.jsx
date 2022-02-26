@@ -75,6 +75,10 @@ const Wrapper = styled.article`
 
   .btn {
     background: var(--black-color);
+
+    &:hover {
+      background: #4c4c4c;
+    }
   }
 
   @media (min-width: 768px) {
@@ -83,6 +87,26 @@ const Wrapper = styled.article`
 
     img {
       width: 197px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    padding: 0;
+    height: 560px;
+    flex-direction: row;
+    gap: 140px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    img {
+      width: 410px;
+      transform: translateY(10%);
+    }
+
+    .info {
+      text-align: left;
+      margin-bottom: 4rem;
     }
   }
 `;

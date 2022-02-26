@@ -14,7 +14,7 @@ const images = {
   homeProduct1Desktop: require('./home/desktop/image-speaker-zx9.png'),
   homeProduct2Mobile: require('./home/mobile/image-speaker-zx7.jpg'),
   homeProduct2Tablet: require('./home/tablet/image-speaker-zx7.jpg'),
-  homeProduct2Dekstop: require('./home/desktop/image-speaker-zx7.jpg'),
+  homeProduct2Desktop: require('./home/desktop/image-speaker-zx7.jpg'),
   homeProduct3Mobile: require('./home/mobile/image-earphones-yx1.jpg'),
   homeProduct3Tablet: require('./home/tablet/image-earphones-yx1.jpg'),
   homeProduct3Desktop: require('./home/desktop/image-earphones-yx1.jpg'),
