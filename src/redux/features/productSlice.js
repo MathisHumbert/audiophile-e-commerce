@@ -5,12 +5,12 @@ const initialState = {
   product: [],
   isLoading: false,
   isError: false,
-  isMenuOpen: false,
 };
 
 export const fetchProduct = createAsyncThunk('product/get', async (id) => {
   try {
     let { data } = await axios('http://localhost:3000/data.json');
+    console.log(data);
     data = data.filter((item) => item.slug === id);
     return data;
   } catch (error) {
