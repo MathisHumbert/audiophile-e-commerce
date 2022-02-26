@@ -14,6 +14,7 @@ const CartAside = () => {
 
   useEffect(() => {
     dispatch(toggleCartInfo());
+    // eslint-disable-next-line
   }, [cart]);
 
   const handleClick = (e) => {

@@ -12,6 +12,7 @@ const Product = () => {
 
   useEffect(() => {
     dispatch(fetchProduct(productName));
+    // eslint-disable-next-line
   }, [productName]);
 
   if (isLoading || product.length === 0) {
