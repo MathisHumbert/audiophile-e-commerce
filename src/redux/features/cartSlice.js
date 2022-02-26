@@ -28,6 +28,7 @@ const cartSlice = createSlice({
           if (item.id === newItem.id) {
             item.amount += newItem.amount;
           }
+          return item;
         });
       } else {
         tempCart.push(newItem);
@@ -49,6 +50,7 @@ const cartSlice = createSlice({
         if (item.id === action.payload) {
           item.amount += 1;
         }
+        return item;
       });
       localStorage.setItem('cart', JSON.stringify(state.cart));
     },
@@ -57,6 +59,7 @@ const cartSlice = createSlice({
         if (item.id === action.payload) {
           item.amount -= 1;
         }
+        return item;
       });
       localStorage.setItem('cart', JSON.stringify(state.cart));
     },

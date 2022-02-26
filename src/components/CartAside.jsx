@@ -68,19 +68,18 @@ const CartAside = () => {
 };
 
 const Wrapper = styled.aside`
-  top: 86.27px;
-  padding: 24px 0;
+  padding: 24px;
+  margin-top: 86px;
 
   .content {
-    cursor: initial;
     background: var(--white-color);
     padding: 32px 28px;
-    margin: 0 24px;
+    max-width: 488px;
+    cursor: initial;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    max-width: 488px;
   }
 
   .empty {
@@ -140,7 +139,7 @@ const Wrapper = styled.aside`
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 1440px) {
     padding: 32px 0;
     .content {
       margin: 0 165px;
