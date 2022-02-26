@@ -23,6 +23,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 9px;
+  width: 100%;
 
   header {
     display: flex;

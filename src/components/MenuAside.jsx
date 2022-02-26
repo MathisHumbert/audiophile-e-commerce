@@ -41,5 +41,11 @@ const Wrapper = styled.aside`
     flex-direction: column;
     gap: 2rem;
   }
+
+  @media (min-width: 768px) {
+    .content {
+      padding: 56px 40px 66px 40px;
+    }
+  }
 `;
 export default MenuAside;

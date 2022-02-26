@@ -100,5 +100,9 @@ const Wrapper = styled.section`
   button {
     width: 100%;
   }
+
+  @media (min-width: 768px) {
+    padding: 32px;
+  }
 `;
 export default Summary;

@@ -34,12 +34,12 @@ const Form = () => {
 
   return (
     <Wrapper onSubmit={(e) => e.preventDefault()}>
-      <h4>checkout</h4>
+      <h3>checkout</h3>
       {/* BILLING DETAILS */}
       <div className='form-container'>
         <div className='form-group'>
           <p className='subtitle'>billing details</p>
-          <div className='inputs-container'>
+          <div className='inputs-container billing-details'>
             {/* NAME */}
             <FormControl
               name='name'
@@ -72,7 +72,7 @@ const Form = () => {
         {/* SHIPPING INFO */}
         <div className='form-group'>
           <p className='subtitle'>shipping info</p>
-          <div className='inputs-container'>
+          <div className='inputs-container shipping-info'>
             {/* ADDRESS */}
             <FormControl
               name='address'
@@ -130,9 +130,11 @@ const Form = () => {
             />
           </div>
         </div>
+
         <div className='form-group'>
           {emoney ? (
-            <div className='inputs-container'>
+            // EMONEY
+            <div className='inputs-container emoney'>
               {/* ADDRESS */}
               <FormControl
                 name='emoneyNumber'
@@ -153,6 +155,7 @@ const Form = () => {
               />
             </div>
           ) : (
+            // CASH
             <div className='cash-container'>
               <img src={images.cashLogo} alt='cash' />
               <p className='body'>
@@ -174,6 +177,10 @@ const Wrapper = styled.form`
   padding: 32px 24px;
   border-radius: 8px;
 
+  h3 {
+    margin-bottom: 2rem;
+  }
+
   .form-container {
     display: flex;
     flex-direction: column;
@@ -194,10 +201,6 @@ const Wrapper = styled.form`
     color: var(--orange-color);
     line-height: 25px;
     margin-bottom: 1rem;
-  }
-
-  h4 {
-    margin-bottom: 2rem;
   }
 
   .label {
@@ -223,6 +226,43 @@ const Wrapper = styled.form`
     }
     .body {
       opacity: 0.5;
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 30px 27px;
+
+    h3 {
+      margin-bottom: 41px;
+    }
+
+    .form-container {
+      gap: 56px;
+    }
+
+    .billing-details,
+    .shipping-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px 1rem;
+    }
+
+    .shipping-info .control-form:first-child {
+      grid-column: 1 / 3;
+    }
+
+    .checkboxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      .main-checkbox:last-child {
+        grid-column: 2/3;
+      }
+    }
+
+    .emoney {
+      flex-direction: row;
+      gap: 1rem;
     }
   }
 `;

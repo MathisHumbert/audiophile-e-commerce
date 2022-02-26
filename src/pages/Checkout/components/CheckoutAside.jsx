@@ -24,7 +24,9 @@ const CheckoutAside = () => {
           <div className='logo'>
             <FaCheck />
           </div>
-          <h3>thank you for your order</h3>
+          <h3>
+            thank you <br /> for your order
+          </h3>
           <p className='body'>
             You will receive an email confirmation shortly.
           </p>
@@ -130,6 +132,42 @@ const Wrapper = styled.aside`
 
   .btn {
     width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .content {
+      padding: 48px;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 540px;
+    }
+
+    h3 {
+      line-height: 38px;
+      margin: 33px 0 24px;
+    }
+
+    .container {
+      margin: 33px 0 46px;
+      display: grid;
+      grid-template-columns: 55% 45%;
+
+      .items {
+        border-bottom-left-radius: 8px;
+        border-top-right-radius: 0;
+      }
+
+      .price {
+        padding: 0;
+        border-top-right-radius: 8px;
+        border-bottom-left-radius: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 24px;
+        gap: 8px;
+      }
+    }
   }
 `;
 export default CheckoutAside;

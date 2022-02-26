@@ -74,13 +74,13 @@ const Wrapper = styled.aside`
     cursor: initial;
     background: var(--white-color);
     padding: 32px 28px;
-    margin: 0 24px;
+    margin: 0 40px;
+    margin-left: auto;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     max-width: 488px;
-    margin-left: auto;
   }
 
   .empty {
