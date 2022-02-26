@@ -15,11 +15,21 @@ const Product = () => {
   }, [productName]);
 
   if (isLoading || product.length === 0) {
-    return <h1>Loading...</h1>;
+    return (
+      <div className='loading-container'>
+        <div className='loading'></div>
+      </div>
+    );
   }
 
   if (isError) {
-    return <h1>Something went wrong. Try again</h1>;
+    return (
+      <div className='error-container'>
+        <h1 className='error'>
+          Something went wrong. <br /> Try again
+        </h1>
+      </div>
+    );
   }
 
   return (

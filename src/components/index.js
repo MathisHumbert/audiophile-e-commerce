@@ -7,6 +7,7 @@ import CartAside from './CartAside';
 import Footer from './Footer';
 import GoBack from './GoBack';
 import MenuAside from './MenuAside';
+import ScrollToTop from './ScrollToTop';
 
 export {
   About,
@@ -18,4 +19,5 @@ export {
   Footer,
   GoBack,
   MenuAside,
+  ScrollToTop,
 };

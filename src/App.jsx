@@ -7,11 +7,18 @@ import {
   Product,
   Speakers,
 } from './pages';
-import { Navbar, Footer, CartAside, MenuAside } from './components';
+import {
+  Navbar,
+  Footer,
+  CartAside,
+  MenuAside,
+  ScrollToTop,
+} from './components';
 
 const App = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <CartAside />
       <MenuAside />
