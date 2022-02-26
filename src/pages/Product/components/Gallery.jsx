@@ -96,10 +96,21 @@ const Wrapper = styled.section`
     flex-direction: row;
     width: 100%;
 
-    .right img,
-    .left img {
-      max-height: inherit;
+    .right img {
+      max-height: 592px;
     }
+
+    .left img {
+      max-height: 280px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .left {
+      gap: 32px;
+    }
+
+    padding-top: 160px;
   }
 `;
 export default Gallery;

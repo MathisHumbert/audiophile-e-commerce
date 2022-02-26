@@ -222,7 +222,7 @@ const Wrapper = styled.form`
     gap: 1rem;
 
     img {
-      width: 2rem;
+      width: 48px;
     }
     .body {
       opacity: 0.5;
@@ -264,6 +264,15 @@ const Wrapper = styled.form`
       flex-direction: row;
       gap: 1rem;
     }
+
+    .cash-container {
+      flex-direction: row;
+      gap: 2rem;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    width: 730px;
   }
 `;
 export default Form;

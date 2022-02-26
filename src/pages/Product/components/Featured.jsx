@@ -81,5 +81,13 @@ const Wrapper = styled.section`
       gap: 11px;
     }
   }
+
+  @media (min-width: 1440px) {
+    padding: 160px 0;
+
+    img {
+      min-height: 318px;
+    }
+  }
 `;
 export default Featured;

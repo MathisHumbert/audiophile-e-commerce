@@ -54,5 +54,15 @@ const Wrapper = styled.section`
       margin-bottom: 0;
     }
   }
+
+  @media (min-width: 1440px) {
+    padding-top: 0;
+    display: block;
+    min-width: 350px;
+
+    .title {
+      margin-bottom: 2rem;
+    }
+  }
 `;
 export default Box;

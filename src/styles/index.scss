@@ -148,10 +148,17 @@ h6 {
 
 .go-back {
   display: block;
+  width: fit-content;
   text-decoration: none;
   color: var(--black-color);
   opacity: 0.5;
-  padding: 16px 0 24px;
+  margin: 16px 0 24px;
+  transition: color 0.3s ease, opacity 0.3 ease;
+
+  &:hover {
+    color: var(--orange-color);
+    opacity: 1;
+  }
 }
 
 li a {
@@ -329,6 +336,18 @@ li a {
   }
 
   .go-back {
-    padding: 32px 0 24px;
+    margin: 32px 0 24px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .go-back {
+    margin: 79px 0 56px;
+  }
+
+  .features-box {
+    padding-top: 160px;
+    display: flex;
+    gap: 125px;
   }
 }

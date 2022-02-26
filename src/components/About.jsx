@@ -77,6 +77,7 @@ const Wrapper = styled.section`
     align-items: center;
     gap: 125px;
     text-align: left;
+    padding: 160px 0;
 
     img {
       width: 540px;

@@ -32,7 +32,7 @@ const CheckoutAside = () => {
           </p>
         </header>
         <div className='container'>
-          <div className='items'>
+          <div className='items mobile-items'>
             <Item {...checkoutCart[0]} />
             {checkoutCart.length > 1 && (
               <>
@@ -42,6 +42,11 @@ const CheckoutAside = () => {
                 </p>
               </>
             )}
+          </div>
+          <div className='items desktop-items'>
+            {checkoutCart.map((item) => {
+              return <Item key={item.id} {...item} />;
+            })}
           </div>
           <div className='price'>
             <p className='body'>grand total</p>
@@ -134,6 +139,10 @@ const Wrapper = styled.aside`
     width: 100%;
   }
 
+  .desktop-items {
+    display: none;
+  }
+
   @media (min-width: 768px) {
     .content {
       padding: 48px;
@@ -167,6 +176,21 @@ const Wrapper = styled.aside`
         padding-left: 24px;
         gap: 8px;
       }
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .mobile-items {
+      display: none;
+    }
+
+    .desktop-items {
+      display: block;
+    }
+
+    .container .price {
+      justify-content: end;
+      padding-bottom: 41px;
     }
   }
 `;

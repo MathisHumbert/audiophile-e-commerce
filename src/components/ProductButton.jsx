@@ -20,9 +20,16 @@ const Wrapper = styled.div`
   button {
     background: 0;
     border: 0;
+    color: var(--black-color);
     opacity: 0.25;
     font-size: 13px;
     line-height: 0;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: var(--orange-color);
+      opacity: 1;
+    }
   }
 `;
 

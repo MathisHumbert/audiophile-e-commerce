@@ -36,6 +36,7 @@ const Wrapper = styled.div`
     font-weight: 700;
     letter-spacing: -0.21px;
     line-height: 16px;
+    cursor: pointer;
   }
 
   .small {
@@ -53,6 +54,7 @@ const Wrapper = styled.div`
     letter-spacing: -0.25px;
     color: var(--black-color);
     transition: 0.3s border ease;
+    cursor: pointer;
 
     &::placeholder {
       font-size: 14px;
@@ -63,6 +65,10 @@ const Wrapper = styled.div`
     }
 
     &:focus {
+      border: 1px solid var(--orange-color);
+    }
+
+    &:hover {
       border: 1px solid var(--orange-color);
     }
   }

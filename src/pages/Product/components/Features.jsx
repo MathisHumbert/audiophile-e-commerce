@@ -44,5 +44,9 @@ const Wrapper = styled.section`
       margin-bottom: 2rem;
     }
   }
+
+  @media (min-width: 1440px) {
+    padding-top: 0;
+  }
 `;
 export default Features;

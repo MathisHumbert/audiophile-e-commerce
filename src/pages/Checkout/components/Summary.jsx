@@ -104,5 +104,10 @@ const Wrapper = styled.section`
   @media (min-width: 768px) {
     padding: 32px;
   }
+
+  @media (min-width: 1440px) {
+    width: 350px;
+    height: fit-content;
+  }
 `;
 export default Summary;

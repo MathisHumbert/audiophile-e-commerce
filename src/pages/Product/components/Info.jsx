@@ -110,7 +110,6 @@ const Wrapper = styled.section`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
     gap: 69px;
 
     img {
@@ -119,6 +118,27 @@ const Wrapper = styled.section`
 
     .container {
       max-width: 445px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    gap: 125px;
+
+    img {
+      max-height: 560px;
+      min-width: 540px;
+    }
+
+    .container {
+      gap: 1rem;
+    }
+
+    .body {
+      margin: 1rem 0;
+    }
+
+    .product-button {
+      margin-top: 30px;
     }
   }
 `;

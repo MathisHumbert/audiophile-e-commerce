@@ -26,8 +26,10 @@ const Product = () => {
     <main className='main-center'>
       <GoBack />
       <Info {...product[0]} />
-      <Features features={product[0].features} />
-      <Box box={product[0].includes} />
+      <div className='features-box'>
+        <Features features={product[0].features} />
+        <Box box={product[0].includes} />
+      </div>
       <Gallery gallery={product[0].gallery} />
       <Featured featured={product[0].others} />
       <Categories />

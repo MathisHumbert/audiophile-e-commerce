@@ -77,5 +77,36 @@ const Wrapper = styled.section`
   .body {
     opacity: 0.5;
   }
+
+  @media (min-width: 1440px) {
+    padding: 160px 0;
+    gap: 160px;
+
+    article {
+      flex-direction: row;
+      gap: 125px;
+      text-align: left;
+    }
+
+    article:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    img {
+      max-height: 560px;
+      min-height: 560px;
+      width: 540px;
+    }
+
+    .info {
+      gap: 1rem;
+      align-items: flex-start;
+      max-width: 572px;
+
+      .body {
+        margin: 1rem 0 24px;
+      }
+    }
+  }
 `;
 export default PageProducts;

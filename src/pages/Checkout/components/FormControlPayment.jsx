@@ -24,8 +24,14 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 21px;
+  transition: 0.3s border ease;
+  cursor: pointer;
 
   &.active {
+    border: 1px solid var(--orange-color);
+  }
+
+  &:hover {
     border: 1px solid var(--orange-color);
   }
 
@@ -33,6 +39,39 @@ const Wrapper = styled.div`
     font-size: 14px;
     font-weight: 700;
     letter-spacing: -0.25px;
+    cursor: pointer;
+  }
+
+  input[type='checkbox'] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+
+    font: inherit;
+    color: currentColor;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #cfcfcf;
+    border-radius: 50%;
+
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+  }
+
+  input[type='checkbox']::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    transform: scale(0);
+    transition: transform 0.5s ease;
+    border-radius: 50%;
+    box-shadow: inset 1em 1em var(--orange-color);
+  }
+
+  input[type='checkbox']:checked::before {
+    transform: scale(1);
   }
 `;
 export default FormControlPayment;

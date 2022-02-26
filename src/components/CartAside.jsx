@@ -28,7 +28,7 @@ const CartAside = () => {
     >
       <div className='content'>
         {cart.length === 0 ? (
-          <div className='content empty'>
+          <div className='empty'>
             <h6>
               Your cart is empty. <br /> Fill it!
             </h6>
@@ -74,8 +74,7 @@ const Wrapper = styled.aside`
     cursor: initial;
     background: var(--white-color);
     padding: 32px 28px;
-    margin: 0 40px;
-    margin-left: auto;
+    margin: 0 24px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -97,6 +96,12 @@ const Wrapper = styled.aside`
       cursor: pointer;
       border: 0;
       background: 0;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: var(--orange-color);
+        opacity: 1;
+      }
     }
   }
 
@@ -125,6 +130,21 @@ const Wrapper = styled.aside`
     font-size: 18px;
     line-height: 25px;
     letter-spacing: 1.3px;
+  }
+
+  @media (min-width: 768px) {
+    .content {
+      margin: 0 40px;
+      margin-left: auto;
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 32px 0;
+    .content {
+      margin: 0 165px;
+      margin-left: auto;
+    }
   }
 `;
 export default CartAside;
