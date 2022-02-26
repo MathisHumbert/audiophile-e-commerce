@@ -9,10 +9,9 @@ const initialState = {
 
 export const fetchProduct = createAsyncThunk('product/get', async (id) => {
   try {
-    let { data } = await axios('http://localhost:3000/data.json');
-    console.log(data);
-    data = data.filter((item) => item.slug === id);
-    return data;
+    let { data } = await axios('/data.json');
+    let tempData = data.filter((item) => item.slug === id);
+    return tempData;
   } catch (error) {
     console.log(error);
   }
