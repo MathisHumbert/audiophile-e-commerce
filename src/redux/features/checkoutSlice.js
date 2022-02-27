@@ -27,7 +27,6 @@ const checkoutSlice = createSlice({
     },
     resetForm: () => initialState,
     addCartToCheckout: (state, action) => {
-      console.log(action.payload);
       state.checkoutCart = action.payload.cart;
       state.checkoutCartTotal = action.payload.total;
     },
