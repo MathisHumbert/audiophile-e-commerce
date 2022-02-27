@@ -6,6 +6,7 @@ import {
   Home,
   Product,
   Speakers,
+  PrivateRoute,
 } from './pages';
 import {
   Navbar,
@@ -27,7 +28,9 @@ const App = () => {
         <Route path='/headphones' element={<Headphones />} />
         <Route path='/speakers' element={<Speakers />} />
         <Route path='/earphones' element={<Earphones />} />
-        <Route path='/checkout' element={<Checkout />} />
+        <Route path='/checkout' element={<PrivateRoute />}>
+          <Route index element={<Checkout />} />
+        </Route>
         <Route path='/products/:productName' element={<Product />} />
       </Routes>
       <Footer />

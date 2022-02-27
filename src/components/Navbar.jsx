@@ -8,6 +8,7 @@ import { footerLinksData } from '../utils/data';
 const Navbar = () => {
   const dispatch = useDispatch();
   const { isMenuOpen } = useSelector((state) => state.aside);
+  const { amount } = useSelector((state) => state.cart);
 
   return (
     <Wrapper>
@@ -40,6 +41,7 @@ const Navbar = () => {
           onClick={() => dispatch(toggleCartAside())}
         >
           <img src={images.checkoutLogo} alt='checkout-logo' />
+          <div className='cart-amount'>{amount}</div>
         </button>
       </div>
     </Wrapper>
@@ -62,6 +64,23 @@ const Wrapper = styled.nav`
   .checkout {
     background: 0;
     border: 0;
+    position: relative;
+  }
+
+  .cart-amount {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    top: 0;
+    right: 0;
+    transform: translate(10%, -40%);
+    width: 20px;
+    height: 20px;
+    background: var(--orange-color);
+    color: var(--white-color);
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 50%;
   }
 
   .logo {
