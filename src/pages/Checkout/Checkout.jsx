@@ -2,12 +2,10 @@ import styled from 'styled-components';
 import { GoBack } from '../../components';
 import Form from './components/Form';
 import Summary from './components/Summary';
-import CheckoutAside from './components/CheckoutAside';
 
 const Checkout = () => {
   return (
     <main className='main-center'>
-      <CheckoutAside />
       <GoBack />
       <Wrapper>
         <Form />

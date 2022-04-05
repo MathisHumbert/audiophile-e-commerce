@@ -4,7 +4,7 @@ import { preventScroll } from '../../utils/helpers';
 const initialState = {
   isMenuOpen: false,
   isCartOpen: false,
-  isCheckoutOpen: false,
+  isCheckoutOpen: true,
 };
 
 const asideSlice = createSlice({

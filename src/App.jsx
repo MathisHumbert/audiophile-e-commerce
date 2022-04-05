@@ -15,6 +15,7 @@ import {
   MenuAside,
   ScrollToTop,
 } from './components';
+import CheckoutAside from './pages/Checkout/components/CheckoutAside';
 
 const App = () => {
   return (
@@ -23,6 +24,8 @@ const App = () => {
       <Navbar />
       <CartAside />
       <MenuAside />
+      <CheckoutAside />
+
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/headphones' element={<Headphones />} />

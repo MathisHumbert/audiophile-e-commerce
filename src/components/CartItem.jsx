@@ -13,7 +13,6 @@ const CartItem = ({ id, name, price, amount, img }) => {
 
   const decAmount = () => {
     if (amount === 1) {
-      console.log('delete');
       dispatch(deleteItem(id));
     } else {
       dispatch(decItemAmount(id));

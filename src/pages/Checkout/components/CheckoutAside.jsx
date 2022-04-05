@@ -13,8 +13,6 @@ const CheckoutAside = () => {
   );
   const { isCheckoutOpen } = useSelector((state) => state.aside);
 
-  console.log(checkoutCart);
-
   return (
     <Wrapper
       className={isCheckoutOpen ? 'checkout-aside open' : 'checkout-aside'}
